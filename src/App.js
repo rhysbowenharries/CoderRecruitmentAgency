@@ -1,25 +1,18 @@
 import React, { Component, Fragment }from 'react';
 import './App.css';
-import CreatePageContainer from "./containers/CreatePageContainer";
-import ProfileListContainer from './containers/ProfileListContainer';
+import './components/Navbar.css';
+import Main from './containers/Main';
 
 class App extends Component {
-  
-  profileList(){
-    
-  }
 
-  render(){
-    return (
-      <Fragment>
-        <header>
-          <h1>C0drz UnitE</h1>
-        </header>
-        <CreatePageContainer/>
-        <ProfileListContainer/>
-      </Fragment>
-  )
-}
+
+    render(){
+        return (
+
+            <Main/>
+
+        )
+    }
 }
 
 export default App;
