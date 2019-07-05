@@ -1,13 +1,13 @@
 import React, { Component, Fragment } from "react";
-import FormComponent from "../components/FormComponent";
+import ProfileList from "../components/ProfileList"
 
-class CreatePageContainer extends Component{
+class ProfileListContainer extends Component{
 
     constructor(props){
         super(props)
         this.state = {
         
-            profiles: []
+            profiles: [ ]
         }
         this.addProfile = this.addProfile.bind(this)
     }  
@@ -19,18 +19,11 @@ class CreatePageContainer extends Component{
         })
     }
 
-    handleProfile(){
-        this.props.profileList({
-           profiles: this.state.profiles
-        })
-
-    }
-
     render(){
         return(
             <Fragment>
                 
-                    <FormComponent addProfile= {this.addProfile}/>                
+                    <ProfileList profiles= {this.state.profiles}/>                
                  
             </Fragment>
         )    
@@ -38,4 +31,4 @@ class CreatePageContainer extends Component{
 
 }
 
-export default CreatePageContainer;
+export default ProfileListContainer;
