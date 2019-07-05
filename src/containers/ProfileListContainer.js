@@ -7,7 +7,7 @@ class ProfileListContainer extends Component{
         super(props)
         this.state = {
         
-            profiles: [ ]
+            profiles: []
         }
         this.addProfile = this.addProfile.bind(this)
     }  
