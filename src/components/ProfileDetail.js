@@ -9,7 +9,7 @@ const ProfileDetail = (props) => {
             <p>{props.last_name}</p>
             <p>{props.languages}</p>
         </li>
-    
+
     )
 }
 
