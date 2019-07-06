@@ -8,7 +8,7 @@ const Home = () => (
 
     <img src="./pic.jpg" alt="man coding at screen"></img>
     </>
-    <h1>this is covfefe for Stephen </h1>
+    
     
 )
 
