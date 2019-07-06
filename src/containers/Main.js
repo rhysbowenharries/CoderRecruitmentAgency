@@ -11,10 +11,10 @@ class Main extends Component {
     render(){
         return (
             <Fragment>
+
             <Router>
                 <Fragment>
-                <Navbar/>
-
+                    <Navbar/>
                     <Switch>
                     <Route exact path="/" component={Home}/>
                     <Route path = "/sign_up" component= {FormComponent}/>
@@ -22,8 +22,6 @@ class Main extends Component {
                     </Switch>
                 </Fragment>
             </Router>
-                
-               
 
             </Fragment>
         )

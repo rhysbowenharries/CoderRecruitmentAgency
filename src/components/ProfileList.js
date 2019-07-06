@@ -1,5 +1,6 @@
 import React from 'react'
 import ProfileDetail from './ProfileDetail'
+import "./ProfileDetail.css"
 
 const ProfileList = (props) => {
 
@@ -14,8 +15,8 @@ const ProfileList = (props) => {
     })
 
     return(
-        <div className ="list-profile">
-        <ul>{options}</ul>
+        <div >
+        <ul >{options}</ul>
         </div>
     )
 }

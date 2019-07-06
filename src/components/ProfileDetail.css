@@ -1,3 +1,39 @@
 .list-profile{
-    border: 2px solid black
+    border: 2px solid black;
+    background:white;
+    margin-bottom: 2%;
+    min-height: 200px;
+    padding-left: 3%;
+    padding-right: 3%;
+    display: flex;
+
+}
+
+h2, h4{
+    font-weight: lighter;
+}
+
+.langauge{
+    margin-top: -1%;
+}
+
+.profile{
+    width:100px;
+    top:25%;
+    padding-right: 5%;
+    position: relative;
+}
+
+
+ul{
+    list-style-type: none;
+    margin-right: 15%;
+    margin-left: 5%;
+}
+
+.view-profile-button{
+    width: 200px;
+    padding: 1%;
+    float: right;
+    margin-bottom: 2%;
 }

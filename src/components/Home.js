@@ -6,13 +6,8 @@ const Home = () => (
     <h1> Hire top E30 talent, first!1!</h1>
     <p>is where we admit that we are all desper a job except michale the bastart </p>
 
-<<<<<<< HEAD
     <img src="./pic.jpg" alt="man coding at screen"></img>
-    </>
-    
-    
-=======
     </div>
->>>>>>> feature/inputform
+
 )
 export default Home;
