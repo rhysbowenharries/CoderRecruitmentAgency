@@ -10,15 +10,16 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin
 @RequestMapping(value= "/programmers")
 public class ProgrammerController {
     @Autowired
     ProgrammerRepository programmerRepository;
 
-//    @GetMapping
-//    public List<Programmer> getAllProfiles(){
-//        return programmerRepository.findAll();
-//    }
+    @GetMapping
+    public List<Programmer> getAllProfiles(){
+        return programmerRepository.findAll();
+    }
 
     @GetMapping("{id}")
     public Optional<Programmer> getProfile(@PathVariable Long id){
