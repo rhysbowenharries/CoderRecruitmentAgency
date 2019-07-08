@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-//@RestController
+@RestController
 @CrossOrigin
-@RequestMapping(value= "/programmers", method = RequestMethod.GET)
+@RequestMapping(value= "/programmers")
 public class ProgrammerController {
     @Autowired
     ProgrammerRepository programmerRepository;
