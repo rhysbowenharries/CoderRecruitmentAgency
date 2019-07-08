@@ -25,11 +25,11 @@ h2, h4{
 }
 
 
-ul{
+/* ul{
     list-style-type: none;
     margin-right: 15%;
     margin-left: 5%;
-}
+} */
 
 .view-profile-button{
     width: 200px;

@@ -7,7 +7,6 @@ import Home from '../components/Home'
 
 class Main extends Component {
 
-
     render(){
         return (
             <Fragment>

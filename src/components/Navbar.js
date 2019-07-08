@@ -10,7 +10,7 @@ const Navbar = () => (
    {/* </div> */}
    {/* <div> */}
     <ul className="navContent">
-        <li className="logo"> logo </li>
+        <li className="logo">logo</li>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/start_hire">Start hiring now</Link></li>
         <li><Link to="/sign_up">Sign Up</Link></li>

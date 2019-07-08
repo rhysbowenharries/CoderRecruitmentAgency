@@ -1,52 +1,67 @@
-.navbar{
-    list-style:none;
-    margin:0;
-    padding:0;
-    width:100%;
-    border: 1px solid black;
-}
 .navbar ul{
     width: 100%;
     justify-content: flex-end;
     text-decoration: none;
-    border: 1px solid black;   
-}
-.navbar h1{
-    display: flex;
-    justify-content: flex-start;
-    display:inline;
-    border: 1px solid yellow;   
+    border: 2px solid black;   
+    background-color: #D6DBE4;
+
 }
 .navbar li{
     justify-content: flex-end;
-    padding:0% 5% 0% 5%;
+    padding:0% 3% 0% 3%;
     display:inline;
-    border: 3px solid green;
-    margin-top: 1%;
+    border: 1px solid green;
+    
 
 }
 .navbar a{
+    /* margin: 5%; */
+    /* padding: 5%; */
     display:inline-block;
     justify-content: space-between;    
-    border: 2px solid pink;   
+    border: 2px solid pink; 
+    text-decoration: none;
+    margin: 1%;
 }
-.logo {
+.logo{
     width: 100%;
     display:inline;
     display: flex;
     float: left;
-    border: 2px solid orange;
-    margin-top: 1%;
-
+    border: 1px solid black;
 
 }
 .navContent {
     display: flex;
     justify-content: flex-end;
     width: 100%;
-    
     float: right;
-    border: 1px solid blueviolet;
-
-    
+    border: 1px solid blueviolet;    
+    margin: 0%;
 }
+.main-content{
+    padding-top: 100px;
+    margin-left: 2%;
+}
+h1{
+    margin-left: 2%;
+}
+p{
+    margin-left: 4%;
+}
+
+
+/* .navbar h1{
+    display: flex;
+    justify-content: flex-start;
+    display:inline;
+    border: 1px solid yellow;   
+} */
+
+/* .navbar{
+    list-style:none;
+    margin:0;
+    padding:5%;
+    width:100%;
+    border: 2px solid blue;
+} */
