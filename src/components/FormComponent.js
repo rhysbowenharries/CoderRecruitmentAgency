@@ -66,7 +66,7 @@ class FormComponent extends Component{
                     </input>
                     <br/>
                     <label for="profession">What is your job title?</label><br/><br/>
-                    <select  id="last_name" placeholder="Last name">
+                    <select  id="last_name" placeholder="Last name" className="select">
                         <option value = "Software Engineer"> Software Engineer </option>
                         <option value = "Engineer Management"> Engineer Management </option>
                         <option value = "UX"> Software Engineer </option>

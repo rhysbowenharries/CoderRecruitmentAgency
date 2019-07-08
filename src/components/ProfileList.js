@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { Fragment} from 'react'
 import ProfileDetail from './ProfileDetail'
 import "./ProfileDetail.css"
+import "./ProfileList.css"
 
 const ProfileList = (props) => {
 
-    const options = props.profiles.map( (profile, index) => {
 
+
+    const options = props.profiles.map( (profile, index) => {
         return <ProfileDetail
         key= {index}
         first_name = {profile.firstName}
@@ -14,10 +16,13 @@ const ProfileList = (props) => {
         />
     })
 
+
     return(
-        <div >
-        <ul >{options}</ul>
-        </div>
+        <Fragment>
+            <div className ="profileList">
+                <ul className ="ul">{options}</ul>
+            </div>
+        </Fragment>
     )
 }
 
