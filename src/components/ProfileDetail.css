@@ -14,13 +14,16 @@ h2, h4{
 }
 
 .langauge{
+    display: inline-block;
     margin-top: -1%;
+    background-color: #e8e8e8;
+    padding: 0.5%;
 }
 
 .profile{
     width:100px;
     top:25%;
-    padding-right: 5%;
+    margin-right: 5%;
     position: relative;
 }
 
@@ -28,7 +31,7 @@ h2, h4{
 ul{
     list-style-type: none;
     margin-right: 15%;
-    margin-left: 5%;
+    margin-left: 15%;
 }
 
 .view-profile-button{
@@ -36,4 +39,8 @@ ul{
     padding: 1%;
     float: right;
     margin-bottom: 2%;
+}
+
+.margin-right{
+    margin-right:5%;
 }
