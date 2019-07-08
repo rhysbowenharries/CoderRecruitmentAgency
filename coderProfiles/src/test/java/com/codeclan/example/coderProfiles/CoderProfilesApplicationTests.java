@@ -1,7 +1,7 @@
 package com.codeclan.example.coderProfiles;
 
-import com.codeclan.example.coderProfiles.models.Profile;
-import com.codeclan.example.coderProfiles.repositories.ProfileRepository;
+import com.codeclan.example.coderProfiles.models.Programmer;
+import com.codeclan.example.coderProfiles.repositories.ProgrammerRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class CoderProfilesApplicationTests {
 
 	@Autowired
-	ProfileRepository profileRepository;
+	ProgrammerRepository programmerRepository;
 
 	@Test
 	public void contextLoads() {
@@ -21,8 +21,8 @@ public class CoderProfilesApplicationTests {
 
 	@Test
 	public void createProfile(){
-		Profile alex = new Profile("Alex", "Baz", "JavaScript");
-		profileRepository.save(alex);
+		Programmer alex = new Programmer("Alex", "Baz", "JavaScript");
+		programmerRepository.save(alex);
 	}
 
 

@@ -1,7 +1,7 @@
 package com.codeclan.example.coderProfiles.components;
 
-import com.codeclan.example.coderProfiles.models.Profile;
-import com.codeclan.example.coderProfiles.repositories.ProfileRepository;
+import com.codeclan.example.coderProfiles.models.Programmer;
+import com.codeclan.example.coderProfiles.repositories.ProgrammerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -11,24 +11,24 @@ import org.springframework.stereotype.Component;
 public class DataLoader implements ApplicationRunner {
 
     @Autowired
-    ProfileRepository profileRepository;
+    ProgrammerRepository programmerRepository;
 
     public DataLoader() {
 
     }
 
     public void run(ApplicationArguments args){
-        Profile john = new Profile("John", "Harper", "Ruby");
-        profileRepository.save(john);
+        Programmer john = new Programmer("John", "Harper", "Ruby");
+        programmerRepository.save(john);
 
-        Profile alex= new Profile("alex", "Bax", "JavaScript");
-        profileRepository.save(alex);
+        Programmer alex= new Programmer("alex", "Bax", "JavaScript");
+        programmerRepository.save(alex);
 
-        Profile katie= new Profile("Katie", "J-dog", "Java");
-        profileRepository.save(katie);
+        Programmer katie= new Programmer("Katie", "J-dog", "Java");
+        programmerRepository.save(katie);
 
-        Profile cruncher= new Profile("Cruncher", "McKilldestroy", "C++");
-        profileRepository.save(cruncher);
+        Programmer cruncher= new Programmer("Cruncher", "McKilldestroy", "C++");
+        programmerRepository.save(cruncher);
 
 
 

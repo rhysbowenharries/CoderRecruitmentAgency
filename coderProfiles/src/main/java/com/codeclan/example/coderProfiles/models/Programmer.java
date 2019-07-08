@@ -3,10 +3,8 @@ package com.codeclan.example.coderProfiles.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name="profiles")
-
-
-public class Profile {
+@Table(name="programmers")
+public class Programmer {
 
 
     @Column(name = "first_name")
@@ -23,13 +21,13 @@ public class Profile {
     private Long id;
 
 
-    public Profile(String firstName, String lastName, String languages){
+    public Programmer(String firstName, String lastName, String languages){
         this.firstName = firstName;
         this.lastName = lastName;
         this.languages = languages;
     }
 
-    public Profile() {
+    public Programmer() {
     }
 
     public Long getId() {
