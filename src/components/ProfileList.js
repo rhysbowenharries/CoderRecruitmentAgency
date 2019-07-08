@@ -8,8 +8,8 @@ const ProfileList = (props) => {
 
         return <ProfileDetail
         key= {index}
-        first_name = {profile.first_name}
-        last_name = {profile.last_name}
+        first_name = {profile.firstName}
+        last_name = {profile.lastName}
         languages = {profile.languages}
         />
     })
