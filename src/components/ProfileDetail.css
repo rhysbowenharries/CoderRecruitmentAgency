@@ -36,19 +36,13 @@ h2, h4{
     }
 
 
-<<<<<<< HEAD
-/* ul{
-    list-style-type: none;
-    margin-right: 15%;
-    margin-left: 5%;
-} */
-=======
+
 .ul{
     margin-right: 15%;
     margin-left: 15%;
     list-style-type: none;
     }
->>>>>>> ddc430c3a305dca6242691e073df4fe05c1ccf94
+
 
 .view-profile-button{
     width: 200px;
