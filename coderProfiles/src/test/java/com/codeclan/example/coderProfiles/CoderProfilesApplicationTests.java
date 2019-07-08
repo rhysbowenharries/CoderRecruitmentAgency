@@ -21,7 +21,7 @@ public class CoderProfilesApplicationTests {
 
 	@Test
 	public void createProfile(){
-		Programmer alex = new Programmer("Alex", "Baz", "JavaScript");
+		Programmer alex = new Programmer("Alex", "Baz", "JavaScript", "hi");
 		programmerRepository.save(alex);
 	}
 

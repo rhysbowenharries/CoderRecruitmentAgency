@@ -18,16 +18,16 @@ public class DataLoader implements ApplicationRunner {
     }
 
     public void run(ApplicationArguments args){
-        Programmer john = new Programmer("John", "Harper", "Ruby");
+        Programmer john = new Programmer("John", "Harper", "Ruby", "I am a Ginger Jedi");
         programmerRepository.save(john);
 
-        Programmer alex= new Programmer("alex", "Bax", "JavaScript");
+        Programmer alex= new Programmer("alex", "Bax", "JavaScript", "One way to find out");
         programmerRepository.save(alex);
 
-        Programmer katie= new Programmer("Katie", "J-dog", "Java");
+        Programmer katie= new Programmer("Katie", "J-dog", "Java", "I will fight you!");
         programmerRepository.save(katie);
 
-        Programmer cruncher= new Programmer("Cruncher", "McKilldestroy", "C++");
+        Programmer cruncher= new Programmer("Cruncher", "McKilldestroy", "C++", "I am a giant, but I now eat Snozcumbers");
         programmerRepository.save(cruncher);
 
 

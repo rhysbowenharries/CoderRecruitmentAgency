@@ -33,7 +33,8 @@ class Main extends Component {
       body: JSON.stringify({
         firstName: profile.firstName,
         lastName: profile.lastName,
-        languages: profile.languages
+        languages: profile.languages,
+        profileDescription: profile.profileDescription
       })
     })
   }

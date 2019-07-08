@@ -7,12 +7,10 @@ class FormComponent extends Component{
         super(props)
         this.state = {
 
-
-                id: 0,
                 firstName: "",
                 lastName: "",
                 languages: "",
-                profile_description: ""
+                profileDescription: ""
 
 
         }
@@ -45,7 +43,7 @@ class FormComponent extends Component{
             firstName: this.state.firstName,
             lastName: this.state.lastName,
             languages: this.state.languages,
-            profile_description: this.state.profileDescription
+            profileDescription: this.state.profileDescription
         })
     }
 
