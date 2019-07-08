@@ -12,38 +12,55 @@ class Main extends Component {
     this.state = {
       profiles: []
     }
+    this.url = 'http://localhost:8080/programmers';
   }
 
   componentDidMount() {
-    const url = 'http://localhost:8080/programmers';
+    fetch(this.url)
+    .then(res => res.json())
+    .then(profiles => this.setState({profiles: profiles._embedded.programmers}))
+    .catch(err=>console.error);
+  }
 
-    fetch(url)
-      .then(res => res.json())
-      .then(profiles => this.setState({profiles: profiles}))
-      .catch(err=>console.error);
+  addProfile(profile) {
+    const url = 'http://localhost:8080/programmers'
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        firstName: profile.firstName,
+        lastName: profile.lastName,
+        languages: profile.languages
+      })
+    })
   }
 
 
-    render(){
-        return (
-            <Fragment>
+  render(){
+    return (
+      <Fragment>
 
-            <Router>
-                <Fragment>
-                    <Navbar/>
-                    <Switch>
-                    <Route exact path="/" component={Home}/>
-                    <Route path = "/sign_up" component= {FormComponent}/>
-                    <Route path = "/start_hire"  render={() => {
-                      return <ProfileListContainer profiles={this.state.profiles}/>
-                    }}/>
-                    </Switch>
-                </Fragment>
-            </Router>
+      <Router>
+      <Fragment>
+      <Navbar/>
+      <Switch>
+      <Route exact path="/" component={Home}/>
+      <Route path = "/sign_up" render={() => {
+        return <FormComponent addProfile={this.addProfile}/>
+      }}/>
+      <Route path = "/start_hire"  render={() => {
+        return <ProfileListContainer profiles={this.state.profiles}/>
+      }}/>
+      </Switch>
+      </Fragment>
+      </Router>
 
-            </Fragment>
-        )
-    }
+      </Fragment>
+    )
+  }
 }
 
 export default Main;
