@@ -6,13 +6,7 @@ class ProfileListContainer extends Component{
 
     constructor(props){
         super(props)
-        this.state = {
-            profiles: [
-                {first_name: "Alex", last_name: "Smith", languages: "English"},
-                {first_name: "John",last_name: "Smith", languages: "English"},
-                {first_name: "Andrew",last_name: "Smith", languages: "?????"}
-            ]
-        }
+        this.render = this.render.bind(this)
 
         // this.addProfile = this.addProfile.bind(this)
     }
