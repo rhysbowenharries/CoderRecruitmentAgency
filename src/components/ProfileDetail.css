@@ -81,3 +81,11 @@ h2, h4{
     align-items: center;
     justify-content: flex-start;
     }
+
+button:hover {
+    cursor: pointer;
+}
+
+a:hover{
+    cursor: pointer;
+}

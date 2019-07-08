@@ -7,22 +7,21 @@ class ProfileListContainer extends Component{
     constructor(props){
         super(props)
         this.render = this.render.bind(this)
-
-        // this.addProfile = this.addProfile.bind(this)
+        this.handleProfileIdContainer = this.handleProfileIdContainer.bind(this)
     }
 
-    // addProfile(newProfile) {
-    //     newProfile.id = this.state.profiles.length + 1
-    //     this.setState(prevState => {
-    //         return {profiles: [newProfile, ...prevState.profiles ]}
-    //     })
-    // }
+    handleProfileIdContainer(eventID){
+        this.props.submit(eventID)
+    }
+
 
     render(){
         return(
             <Fragment>
                 <div className = "search-options">
-                <select className = "select-list">
+                <div className = "inline">
+                <label for="select-job">Filter by job-title</label><br/>
+                <select id="select-job" className = "select-list">
                     <option> Select job tiles ... </option>
                     <option value = "Software Engineer"> Software Engineer </option>
                     <option value = "Engineer Management"> Engineer Management </option>
@@ -32,7 +31,19 @@ class ProfileListContainer extends Component{
                     <option value = "Mobile App Engineer"> Mobile App Engineer </option>
                 </select>
                 </div>
-                <ProfileList profiles= {this.state.profiles}/>
+
+                <div className = "inline">
+                <label for="select-language">Filter by language</label><br/>
+                <select id="select-language" className = "select-list">
+                    <option> Select langauge... </option>
+                    <option value = "Ruby"> Ruby  </option>
+                    <option value = "Javascript"> Javascript </option>
+                    <option value = "Java"> Java </option>
+                    <option value = "C++"> C++ </option>
+                </select>
+                </div>
+                </div>
+                <ProfileList submit= {this.handleProfileIdContainer} profiles={this.props.profiles}/>
             </Fragment>
         )
     }

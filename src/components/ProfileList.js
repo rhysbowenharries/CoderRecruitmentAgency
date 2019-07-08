@@ -5,16 +5,21 @@ import "./ProfileList.css"
 
 const ProfileList = (props) => {
 
-
+    const handleProfileId = (eventID) => {
+        props.submit(eventID)
+    }
 
     const options = props.profiles.map( (profile, index) => {
         return <ProfileDetail
-        key= {index}
+        key = {index}
+        id = {profile.id}
         first_name = {profile.firstName}
         last_name = {profile.lastName}
         languages = {profile.languages}
+        submit = {handleProfileId}
         />
     })
+
 
 
     return(

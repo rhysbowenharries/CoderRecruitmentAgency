@@ -6,8 +6,6 @@ class FormComponent extends Component{
     constructor(props){
         super(props)
         this.state = {
-
-
                 id: 0,
                 first_name: "",
                 last_name: "",

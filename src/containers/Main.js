@@ -4,14 +4,27 @@ import ProfileListContainer from './ProfileListContainer';
 import FormComponent from '../components/FormComponent'
 import Navbar from '../components/Navbar'
 import Home from '../components/Home'
+import ProfileIndividual from "./ProfileIndividual"
+import {Link} from 'react-router-dom';
 
 class Main extends Component {
 
   constructor (props) {
     super(props);
     this.state = {
-      profiles: []
+      profiles: [],
+      profileid:null
     }
+    this.handleProfile = this.handleProfile.bind(this)
+  }
+
+
+
+  handleProfile(eventID){
+      this.setState({profileid:eventID})
+      // return (
+      //     <Link to=`/start_hire/${this.state.profileid}` component=<ProfileIndividual profile{this.state.profileid}/>
+      // )
   }
 
   componentDidMount() {
@@ -34,9 +47,10 @@ class Main extends Component {
                     <Switch>
                     <Route exact path="/" component={Home}/>
                     <Route path = "/sign_up" component= {FormComponent}/>
-                    <Route path = "/start_hire"  render={() => {
-                      return <ProfileListContainer profiles={this.state.profiles}/>
+                    <Route exact path = "/start_hire"  render={() => {
+                      return <ProfileListContainer submit = {this.handleProfile} profiles={this.state.profiles}/>
                     }}/>
+                    <Route path = '/start_hire/{this.state.profileid}' component = <ProfileIndividual profile={this.state.profileid}/>/>
                     </Switch>
                 </Fragment>
             </Router>
