@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import { Redirect } from 'react-router-dom';
 import "./FormComponent.css"
 
 class FormComponent extends Component{
@@ -10,7 +11,8 @@ class FormComponent extends Component{
                 firstName: "",
                 lastName: "",
                 languages: "",
-                profileDescription: ""
+                profileDescription: "",
+                toProfileList: false
 
 
         }
@@ -44,49 +46,54 @@ class FormComponent extends Component{
             lastName: this.state.lastName,
             languages: this.state.languages,
             profileDescription: this.state.profileDescription
-        })
+        });
+        this.setState({ toProfileList: true });
     }
 
     render(){
-        return(
-            <Fragment>
-            <h1 className = "form-header"> Fundamentals </h1>
-            <div className = "form-container">
-                <div className = "form">
-                <form className="form-items" onSubmit = {this.handleSubmit}>
-                    <p> All fields are required unless otherwise stated. </p><br/><br/>
-                    <label for="first_name">What is your first name?</label><br/><br/>
-                    <input id="first_name" type="text" placeholder="First name" onChange= {this.handleFirstNameChange}>
-                    </input>
-                    <br/>
-                    <label for="last_name">What is your last name?</label><br/><br/>
-                    <input  id="last_name" type="text" placeholder="Last name" onChange= {this.handleLastNameChange}>
-                    </input>
-                    <br/>
-                    <label for="profession">What is your job title?</label><br/><br/>
-                    <select  id="last_name" placeholder="Last name">
-                        <option value = "Software Engineer"> Software Engineer </option>
-                        <option value = "Engineer Management"> Engineer Management </option>
-                        <option value = "UX"> Software Engineer </option>
-                        <option value = "Product Manager"> Product Manager </option>
-                        <option value = "Front-end Developer"> Front-end Developer </option>
-                        <option value = "Mobile App Engineer"> Mobile App Engineer </option>
-                    </select>
-                    <br/>
-                    <label for="language">What languages do you know?</label><br/><br/>
-                    <input  id="language" type="text" placeholder="Languages" onChange= {this.handleLanguageChange}>
-                    </input>
-                    <br/>
-                    <label for="profile">Tell us a little about yourself.</label><br/><br/>
-                    <textarea id="profile" placeholder="Profile Description" onChange= {this.handleProfileDescriptionChange}>
-                    </textarea>
-                    <br/>
-                    <button type="submit"> Save Profile</button>
-                </form>
+        if (this.state.toProfileList) {
+            return <Redirect to='/start_hire' />
+        } else {
+            return(
+                <Fragment>
+                <h1 className = "form-header"> Fundamentals </h1>
+                <div className = "form-container">
+                    <div className = "form">
+                    <form className="form-items" onSubmit = {this.handleSubmit}>
+                        <p> All fields are required unless otherwise stated. </p><br/><br/>
+                        <label for="first_name">What is your first name?</label><br/><br/>
+                        <input id="first_name" type="text" placeholder="First name" onChange= {this.handleFirstNameChange}>
+                        </input>
+                        <br/>
+                        <label for="last_name">What is your last name?</label><br/><br/>
+                        <input  id="last_name" type="text" placeholder="Last name" onChange= {this.handleLastNameChange}>
+                        </input>
+                        <br/>
+                        <label for="profession">What is your job title?</label><br/><br/>
+                        <select  id="last_name" placeholder="Last name">
+                            <option value = "Software Engineer"> Software Engineer </option>
+                            <option value = "Engineer Management"> Engineer Management </option>
+                            <option value = "UX"> Software Engineer </option>
+                            <option value = "Product Manager"> Product Manager </option>
+                            <option value = "Front-end Developer"> Front-end Developer </option>
+                            <option value = "Mobile App Engineer"> Mobile App Engineer </option>
+                        </select>
+                        <br/>
+                        <label for="language">What languages do you know?</label><br/><br/>
+                        <input  id="language" type="text" placeholder="Languages" onChange= {this.handleLanguageChange}>
+                        </input>
+                        <br/>
+                        <label for="profile">Tell us a little about yourself.</label><br/><br/>
+                        <textarea id="profile" placeholder="Profile Description" onChange= {this.handleProfileDescriptionChange}>
+                        </textarea>
+                        <br/>
+                        <button type="submit" > Save Profile</button>
+                    </form>
+                    </div>
                 </div>
-            </div>
-            </Fragment>
-        )
+                </Fragment>
+            );
+        }
     }
 }
 
