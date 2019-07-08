@@ -1,10 +1,9 @@
 .list-profile{
-    border: 2px solid black;
+    border: 1px solid #B3B3B3;
     background:white;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
     min-height: 200px;
-    padding-left: 3%;
-    padding-right: 3%;
+    padding: 3%;
     display: flex;
 
 }
@@ -15,9 +14,13 @@ h2, h4{
 
 .langauge{
     display: inline-block;
-    margin-top: -1%;
     background-color: #e8e8e8;
-    padding: 0.5%;
+    padding: 0 2%;
+    height: 50px;
+}
+
+.location-icon{
+    height: 30px;
 }
 
 .profile{
@@ -28,7 +31,7 @@ h2, h4{
 }
 
 
-ul{
+.ul{
     list-style-type: none;
     margin-right: 15%;
     margin-left: 15%;
@@ -36,11 +39,42 @@ ul{
 
 .view-profile-button{
     width: 200px;
-    padding: 1%;
+
+    height: auto;
+    padding: 0% !important;
     float: right;
-    margin-bottom: 2%;
+    margin: 1% !important
 }
 
 .margin-right{
     margin-right:5%;
+}
+
+
+.profile-sub-info{
+    width:100%;
+    /* border:1px solid black; */
+
+}
+
+.profile-sub-info p{
+    display:inline-flex;
+    width:30%;
+    /* border:1px solid black; */
+}
+
+.profile-header-info{
+    display:inline-flex;
+    justify-content: space-between;
+    width:100%;
+    /* border:1px solid black; */
+}
+
+.profile-header-info button{
+    justify-content: flex-end;
+}
+
+.profile-header-info h1{
+    justify-content: flex-start;
+    align-items: center;
 }
