@@ -9,16 +9,23 @@ class FormComponent extends Component{
                 id: 0,
                 first_name: "",
                 last_name: "",
+                location: "",
                 languages: "",
-                profile_description: ""
+                askingSalary: null,
+                roleType: '',
+                profile_description: "",
+                jobTitle:""
 
 
         }
             this.handleFirstNameChange = this.handleFirstNameChange.bind(this)
             this.handleLastNameChange = this.handleLastNameChange.bind(this)
             this.handleLanguageChange = this.handleLanguageChange.bind(this)
+            this.handleLocationChange = this.handleLocationChange.bind(this)
             this.handleProfileDescriptionChange = this.handleProfileDescriptionChange.bind(this)
-            // this.handleSubmit = this.handleSubmit.bind(this)
+            this.handleJobTitleChange = this.handleJobTitleChange.bind(this)
+            this.handleSalaryChange = this.handleSalaryChange.bind(this)
+            this.handleRoleChange = this.handleRoleChange.bind(this)
     }
 
     handleFirstNameChange(event){
@@ -29,6 +36,10 @@ class FormComponent extends Component{
         this.setState({last_name: event.target.value})
     }
 
+    handleLocationChange(event){
+        this.setState({location: event.target.value})
+    }
+
     handleLanguageChange(event){
         this.setState({languages: event.target.value})
     }
@@ -37,15 +48,19 @@ class FormComponent extends Component{
         this.setState({profile_description: event.target.value})
     }
 
-    // handleSubmit(event){
-    //     event.preventDefault()
-    //     this.props.addProfile({
-    //         first_name: this.state.first_name,
-    //         last_name: this.state.last_name,
-    //         languages: this.state.languages,
-    //         profile_description: this.state.profile_description
-    //     })
-    // }
+    handleRoleChange(event){
+        this.setState({roleType: event.target.value})
+    }
+
+    handleSalaryChange(event){
+        this.setState({askingSalary: event.target.value})
+    }
+
+    handleJobTitleChange(event){
+        this.setState({jobTitle: event.target.value})
+    }
+
+
 
     render(){
         return(
@@ -63,11 +78,26 @@ class FormComponent extends Component{
                     <input  id="last_name" type="text" placeholder="Last name" onChange= {this.handleLastNameChange}>
                     </input>
                     <br/>
+                    <label for="location">Where would you like to work?</label><br/><br/>
+                    <input  id="location" type="text" placeholder="Location" onChange= {this.handleLocationChange}>
+                    </input>
+                    <br/>
+                    <label for="role">What role would you like(Permanant/Contract)?</label><br/><br/>
+                    <select  onChange= {this.handleRoleChange} id="role" placeholder="" className="select">
+                        <option value = "Permanant"> Permanant </option>
+                        <option value = "Contract"> Contract </option>
+                    </select>
+                    <br/>
+                    <label for="salary">Where would you like to work?</label><br/><br/>
+                    <input  id="salary" type="text" placeholder="Salary" onChange= {this.handleSalaryChange}>
+                    </input>
+                    <br/>
+
                     <label for="profession">What is your job title?</label><br/><br/>
-                    <select  id="last_name" placeholder="Last name" className="select">
+                    <select  onChange= {this.handleJobTitleChange} id="last_name" placeholder="Last name" className="select">
                         <option value = "Software Engineer"> Software Engineer </option>
                         <option value = "Engineer Management"> Engineer Management </option>
-                        <option value = "UX"> Software Engineer </option>
+                        <option value = "UX"> UX Designer </option>
                         <option value = "Product Manager"> Product Manager </option>
                         <option value = "Front-end Developer"> Front-end Developer </option>
                         <option value = "Mobile App Engineer"> Mobile App Engineer </option>
