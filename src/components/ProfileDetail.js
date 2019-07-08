@@ -25,7 +25,11 @@ class ProfileDetail extends Component{
 
     render(){
         if(this.state.toProfileList){
-                return<Redirect to={`/start_hire/${this.props.id}`}/>
+
+                return<Redirect to={
+                    path:{`/start_hire/${this.props.id}`},
+                    state: {this.props}
+                    }/>
         }else{
             return (
                 <Fragment>
@@ -40,7 +44,7 @@ class ProfileDetail extends Component{
                             <li>
                                 <div className = "profile-header-info">
                                     <a><h2><strong>{this.props.first_name} {this.props.last_name}</strong> - Software Engineer</h2></a>
-                                    <button onClick = {this.handleButtonSelection} className="view-profile-button" value={this.props.id}>View Profile</button>
+                                    <button onClick = {this.handleButtonSelection}  className="view-profile-button" value={this.props.id}>View Profile</button>
                                 </div>
                                 <div className = "profile-sub-info">
                                     <p> Asking Salary:£24000 </p>

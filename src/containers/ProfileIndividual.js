@@ -9,7 +9,7 @@ class ProfileIndividual extends Component{
 
     render(){
         return(
-            <h1>hello</h1>
+            <h1>{this.props.profile.first_name}</h1>
         )
     }
 
