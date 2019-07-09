@@ -11,6 +11,8 @@ const ProfileList = (props) => {
 
     const options = props.profiles.map( (profile, index) => {
         return <ProfileDetail
+        
+        
         key = {index}
         id = {profile.id}
         first_name = {profile.firstName}
