@@ -104,7 +104,8 @@ class FormComponent extends Component{
                     </input>
                     <br/>
                     <label htmlFor="role">What role would you like(Permanant/Contract)?</label><br/><br/>
-                    <select  onChange= {this.handleRoleChange} id="role" placeholder="" className="select">
+                    <select  onChange= {this.handleRoleChange} id="role" placeholder="" className="select" required value={this.state.role}>
+                        <option disabled value = ""> Select Role Type </option>
                         <option value = "Permanant"> Permanant </option>
                         <option value = "Contract"> Contract </option>
                     </select>
