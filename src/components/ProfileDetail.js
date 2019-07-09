@@ -47,9 +47,10 @@ class ProfileDetail extends Component{
                                     <button onClick = {this.handleButtonSelection}  className="view-profile-button" value={this.props.id}>View Profile</button>
                                 </div>
                                 <div className = "profile-sub-info">
-                                    <p> Asking Salary:£24000 </p>
-                                    <p> Location Base: Edinburgh </p>
-                                    <p> Role: Permanent </p>
+                                    <p> Asking Salary:£{this.props.salary} </p>
+                                    <p> Location Base: {this.props.location} </p>
+                                    <p> Role: {this.props.role} </p>
+                                    <p>Speciality: {this.props.jobTitle}</p>
                                 </div>
                                 <h4> {this.props.profileDescription}</h4>
                                     <div className ="langauge">

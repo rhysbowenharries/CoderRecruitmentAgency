@@ -19,19 +19,68 @@ public class Programmer {
     @Column(name = "profile_description")
     private String profileDescription;
 
+    @Column(name = "role")
+    private String role;
+
+    @Column(name = "location")
+    private String location;
+
+    @Column(name = "salary")
+    private String salary;
+
+    @Column(name = "job_title")
+    private String jobTitle;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
 
-    public Programmer(String firstName, String lastName, String languages, String profileDescription){
+    public Programmer(String firstName, String lastName, String languages, String profileDescription, String role, String location, String salary, String jobTitle){
         this.firstName = firstName;
         this.lastName = lastName;
         this.languages = languages;
         this.profileDescription = profileDescription;
+        this.role = role;
+        this.location = location;
+        this.salary = salary;
+        this.jobTitle = jobTitle;
+
     }
 
     public Programmer() {
+    }
+
+    public String getJobTitle() {
+        return jobTitle;
+    }
+
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
+    }
+
+    public String getSalary() {
+        return salary;
+    }
+
+    public void setSalary(String salary) {
+        this.salary = salary;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public String getProfileDescription() {

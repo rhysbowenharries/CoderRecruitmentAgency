@@ -69,7 +69,11 @@ class FormComponent extends Component{
            firstName: this.state.firstName,
            lastName: this.state.lastName,
            languages: this.state.languages,
-           profileDescription: this.state.profileDescription
+           profileDescription: this.state.profileDescription,
+           location: this.state.location,
+           salary: this.state.salary,
+           jobTitle: this.state.jobTitle,
+           role: this.state.role
        });
        this.setState({ toProfileList: true });
    }
@@ -105,7 +109,7 @@ class FormComponent extends Component{
                         <option value = "Contract"> Contract </option>
                     </select>
                     <br/>
-                    <label htmlFor="salary">Where would you like to work?</label><br/><br/>
+                    <label htmlFor="salary">Ideal salary</label><br/><br/>
                     <input  id="salary" type="number" placeholder="Salary" onChange= {this.handleSalaryChange}>
                     </input>
                     <br/>

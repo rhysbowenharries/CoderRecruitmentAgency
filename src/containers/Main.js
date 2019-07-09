@@ -48,6 +48,10 @@ class Main extends Component {
         firstName: profile.firstName,
         lastName: profile.lastName,
         languages: profile.languages,
+        role: profile.role,
+        location: profile.location,
+        salary: profile.salary,
+        jobTitle: profile.jobTitle,
         profileDescription: profile.profileDescription
       })
     })

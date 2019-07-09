@@ -17,6 +17,10 @@ const ProfileList = (props) => {
         last_name = {profile.lastName}
         languages = {profile.languages}
         profileDescription = {profile.profileDescription}
+        role = {profile.role}
+        location = {profile.location}
+        salary = {profile.salary}
+        jobTitle = {profile.jobTitle}
         submit = {handleProfileId}
         />
     })
