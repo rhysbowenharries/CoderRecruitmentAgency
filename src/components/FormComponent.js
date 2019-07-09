@@ -7,13 +7,13 @@ class FormComponent extends Component{
     constructor(props){
         super(props)
         this.state = {
-                id: 0,
+                
                 firstName: "",
                 lastName: "",
                 location: "",
                 languages: "",
-                askingSalary: null,
-                roleType: '',
+                salary: null,
+                role: "",
                 profileDescription: "",
                 jobTitle:"",
                 toProfileList: false
@@ -52,11 +52,11 @@ class FormComponent extends Component{
     }
 
     handleRoleChange(event){
-        this.setState({roleType: event.target.value})
+        this.setState({role: event.target.value})
     }
 
     handleSalaryChange(event){
-        this.setState({askingSalary: event.target.value})
+        this.setState({salary: event.target.value})
     }
 
     handleJobTitleChange(event){

@@ -37,6 +37,8 @@ class Main extends Component {
   }
 
   addProfile(profile) {
+    console.log("main box",profile);
+    
     const url = 'http://localhost:8080/programmers'
     fetch(url, {
       method: 'POST',
