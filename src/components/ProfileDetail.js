@@ -21,17 +21,14 @@ class ProfileDetail extends Component{
         this.setState({toProfileList: true})
     }
 
-    
-
-
     render(){
-        if(this.state.toProfileList){
-
-                return<Redirect to={{
-                    pathname:`/start_hire/${this.props.id}`,
-                    state: {props: this.props}
-                }}/>
-        }else{
+        // if(this.state.toProfileList){
+        //
+        //         return<Redirect to={
+        //             path:`/start_hire/${this.props.id}`,
+        //             state: {this.props}
+        //             }/>
+        // }else{
             return (
                 <Fragment>
                     <div className ="list-profile">
@@ -68,7 +65,7 @@ class ProfileDetail extends Component{
                         </div>
                     </Fragment>
                 )
-            }
+            // }
         }
     }
 
