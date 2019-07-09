@@ -5,6 +5,7 @@
 
 }
 .navbar li{
+    cursor: pointer;
     padding-top: 2%;
     justify-content: flex-end;
     display:inline;
@@ -18,24 +19,34 @@
 .navbar a{
     /* margin: 5%; */
     /* padding: 5%; */
+    cursor: pointer;
     display:inline-block;
     justify-content: space-between;
     text-decoration: none;
     margin: 1%}
 
+/* a:visited { text-decoration: none; color:black; }
+a:hover { text-decoration: none; color:blue; }
+a:focus { text-decoration: none; color:yellow; }
+a:hover, a:active { text-decoration: none; color:black } */
+
 .logo{
     width: 100%;
-    padding-left: 5%;
+    padding-top: 1% !important;
     display:inline;
     display: flex;
     float: left;
+}
 
+.logo-image{
+    width:100px !important;
+    float: left;
+    align-items: center;
 }
 .navContent {
     display: flex;
     justify-content: flex-end;
     width: 100%;
-    float: right;
     margin: 0%;
 }
 .main-content{

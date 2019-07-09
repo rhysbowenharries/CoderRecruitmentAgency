@@ -3,7 +3,8 @@
     display: inline-flex;
     position:absolute;
     right:0;
-    height: 100vh;
+    height: 90vh;
+    z-index: -2
 }
 
 .main-content-left{
@@ -12,7 +13,7 @@
 }
 
 .person{
-    width:95%;
+    width:86%;
 }
 
 .main-content-left h1{
@@ -44,3 +45,8 @@
     border-radius: 50px;
     margin-right: 5%;
 }
+
+a:visited { text-decoration: none; color:black; }
+a:hover { text-decoration: none; color:black; }
+a:focus { text-decoration: none; color:black; }
+a:hover, a:active { text-decoration: none; color:black }
