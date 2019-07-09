@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import "./FormComponent.css"
+import { Redirect } from 'react-router-dom';
 
 class FormComponent extends Component{
 
@@ -14,7 +15,8 @@ class FormComponent extends Component{
                 askingSalary: null,
                 roleType: '',
                 profileDescription: "",
-                jobTitle:""
+                jobTitle:"",
+                toProfileList: false
 
 
         }
@@ -75,6 +77,9 @@ class FormComponent extends Component{
 
 
     render(){
+      if (this.state.toProfileList) {
+         return <Redirect to='/start_hire' />
+     } else {
         return(
             <Fragment>
             <h1 className = "form-header"> Fundamentals </h1>
@@ -128,7 +133,7 @@ class FormComponent extends Component{
                 </div>
             </div>
             </Fragment>
-        )
+        )}
     }
 }
 
