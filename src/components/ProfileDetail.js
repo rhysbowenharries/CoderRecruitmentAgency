@@ -4,6 +4,12 @@ import profileimage from "./ppl.jpg"
 import placeholder from "./placeholder.png"
 import ProfileIndividual from "../containers/ProfileIndividual"
 import {Redirect} from 'react-router-dom';
+import Avatar from '@material-ui/core/Avatar';
+import { makeStyles } from '@material-ui/core/styles';
+import Fab from '@material-ui/core/Fab';
+import Icon from '@material-ui/core/Icon';
+import Edit from './edit.png'
+
 
 
 
@@ -16,6 +22,7 @@ class ProfileDetail extends Component{
         }
         this.extraProfileInfoContainer = React.createRef();
         this.handleButtonSelection = this.handleButtonSelection.bind(this)
+
     }
 
     handleButtonSelection = (event) =>{
@@ -24,15 +31,23 @@ class ProfileDetail extends Component{
 
     handleToggleProfile = (event) => {
         const extraProfileInfoContainer = this.extraProfileInfoContainer.current;
+        const button = event.target
         if(extraProfileInfoContainer.classList.contains('hidden')){
             extraProfileInfoContainer.classList.remove('hidden')
+            button.classList.add('close')
+            button.innerHTML = 'x'
         } else {
             extraProfileInfoContainer.classList.add('hidden')
+            button.classList.remove('close')
+            button.innerHTML = 'View Profile'
         }
     }
 
 
+
+
     render(){
+
         return (
             <Fragment>
                 {console.log(this.props)}
@@ -41,7 +56,8 @@ class ProfileDetail extends Component{
 
 
                     <div className = "margin-right">
-                        <img src={profileimage} alt="Italian Trulli" className="profile"></img>
+                        <Avatar alt="Remy Sharp" src= {profileimage} className={'bigAvatar'}/>
+                        {/* <img src={profileimage} alt="Italian Trulli" className="profile"></img> */}
                     </div>
 
                     <div>
@@ -57,10 +73,13 @@ class ProfileDetail extends Component{
                             </div>
 
                             <div ref={this.extraProfileInfoContainer} className = "hidden profile-sub-info">
-                                <p> Asking Salary:£{this.props.salary} </p>
-                                <p> Location Base: {this.props.location} </p>
-                                <p> Role: {this.props.role} </p>
-                                <p>Speciality: {this.props.jobTitle}</p>
+                                <p> Asking Salary:£{this.props.salary} </p><br/>
+                                <p> Location Base: {this.props.location} </p><br/>
+                                <p> Role: {this.props.role} </p><br/>
+                                <p>Speciality: {this.props.jobTitle}</p><br/>
+                                <Fab color="secondary" aria-label="F" >
+                                    <Icon>{Edit}</Icon>
+                                </Fab>
                             </div>
                         </li>
                     </div>

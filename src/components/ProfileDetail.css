@@ -94,3 +94,15 @@ a:hover{
 .hidden{
     display: none;
 }
+
+.close{
+    background-color: white;
+    color: red;
+    font-size: 32px;
+}
+
+.bigAvatar{
+  margin: 10;
+  width: 60;
+  height: 60;
+}
