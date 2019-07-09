@@ -90,3 +90,7 @@ button:hover {
 a:hover{
     cursor: pointer;
 }
+
+.hidden{
+    display: none;
+}
