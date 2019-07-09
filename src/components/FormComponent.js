@@ -91,7 +91,7 @@ class FormComponent extends Component{
         } else {
             return(
                 <Fragment>
-                    <h1 className = "form-header">Fundamentals</h1>
+                    <h1 className = "form-header">Profile Information</h1>
                     <div className = "form-container">
                         <div className = "form">
                             <form className="form-items" onSubmit = {this.handleSubmit}>

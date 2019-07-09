@@ -29,11 +29,11 @@ h2, h4{
     }
 
 .profile{
-    top:25%;
-    width:100px;
+
+    width:10%;
     margin-right: 5%;
-    position: relative;
-    }
+    position: absolute;
+}
 
 
 
@@ -43,26 +43,29 @@ h2, h4{
     list-style-type: none;
     }
 
-.view-profile-button{
+.profile-button{
     width: 200px;
-    height: auto;
+    height: 50px;
     float: right;
     padding: 0% !important;
     margin: 1% !important
-    }
+}
 
 .margin-right{
-    margin-right:5%;
+    margin-right:20%;
     }
 
 
 .profile-sub-info{
+    display: inline-flex;
     width:100%;
+    padding-top: 10%;
     /* border:1px solid black; */
     }
 
-.profile-sub-info p{
-    width:30%;
+.profile-sub-info h3{
+    justify-content: center;
+    width:50%;
     display:inline-flex;
     /* border:1px solid black; */
     }
@@ -98,11 +101,58 @@ a:hover{
 .close{
     background-color: white;
     color: red;
-    font-size: 32px;
+    font-size: 42px;
+    justify-content: flex-end;
+    padding-right: 0% !important;
 }
 
 .bigAvatar{
   margin: 10;
-  width: 60;
-  height: 60;
+  width: 300;
+  height: 300;
+}
+
+.left-container{
+    width:100%;
+}
+
+.sub{
+    display: flex;
+    width: 100%;
+    display: inline-flex;
+    border: 2px solid black;
+    justify-content: center;
+}
+
+.padding-bottom{
+    padding-bottom: 10%;
+}
+
+.margin-bottom{
+    margin-bottom: 10%;
+}
+
+.sub h3{
+
+    display: inline-block;
+    width: 100%;
+    border: 2px solid black;
+    justify-content: center;
+    padding-bottom: 10%;
+}
+
+.profile-sub{
+    width:100%;
+    display: inline-block;
+    justify-content: center;
+}
+
+.sub-description{
+    display: inline-block;
+    padding-bottom: 10%;
+    justify-content: center;
+}
+
+h4{
+    font-size:21px;
 }

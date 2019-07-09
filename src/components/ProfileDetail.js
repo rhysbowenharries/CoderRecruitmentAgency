@@ -56,30 +56,36 @@ class ProfileDetail extends Component{
 
 
                     <div className = "margin-right">
-                        <Avatar alt="Remy Sharp" src= {profileimage} className={'bigAvatar'}/>
-                        {/* <img src={profileimage} alt="Italian Trulli" className="profile"></img> */}
+
+                        <img src={profileimage} alt="Italian Trulli" className="profile"></img>
                     </div>
 
-                    <div>
+                    <div className = "left-container">
                         <li>
                             <div className = "profile-header-info">
                                 <a><h2><strong>{this.props.first_name} {this.props.last_name}</strong> - Software Engineer</h2></a>
-                                <button onClick = {this.handleToggleProfile}  className="view-profile-button" value={this.props.id}>View Profile</button>
+                                <button onClick = {this.handleToggleProfile}  className="profile-button" value={this.props.id}>View Profile</button>
                             </div>
 
-                            <h4> {this.props.profileDescription}</h4>
+
                             <div className ="langauge">
                                 <p>{this.props.languages}</p>
                             </div>
 
-                            <div ref={this.extraProfileInfoContainer} className = "hidden profile-sub-info">
-                                <p> Asking Salary:£{this.props.salary} </p><br/>
-                                <p> Location Base: {this.props.location} </p><br/>
-                                <p> Role: {this.props.role} </p><br/>
-                                <p>Speciality: {this.props.jobTitle}</p><br/>
-                                <Fab color="secondary" aria-label="F" >
-                                    <Icon>{Edit}</Icon>
-                                </Fab>
+                            <div ref={this.extraProfileInfoContainer} className = "hidden">
+
+                                <h4 className='sub-description'> {this.props.profileDescription}</h4>
+
+                                <div className='sub'>
+                                <h3> Asking Salary:<br/><br/> £{this.props.salary} </h3><br/>
+                                <h3> Location Base:<br/><br/>  {this.props.location} </h3><br/>
+                                </div>
+
+                                <div  className='sub padding-bottom'>
+                                <h3> Role: <br/><br/>{this.props.role} </h3><br/>
+                                <h3>Speciality:<br/><br/> {this.props.jobTitle}</h3><br/>
+                                </div>
+
                             </div>
                         </li>
                     </div>
