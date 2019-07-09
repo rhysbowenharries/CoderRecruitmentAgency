@@ -16,6 +16,7 @@ class Main extends Component {
       profileid:null
     }
     this.handleProfile = this.handleProfile.bind(this)
+    this.addProfile = this.addProfile.bind(this)
   }
 
 
@@ -37,8 +38,11 @@ class Main extends Component {
   }
 
   addProfile(profile) {
-    console.log("main box",profile);
-    
+    // works without id for now, might need later
+    // profile.id = this.state.profiles.length + 1;
+    this.setState(prevState => {
+      return {profiles: [...prevState.profiles, profile]}
+    })
     const url = 'http://localhost:8080/programmers'
     fetch(url, {
       method: 'POST',
