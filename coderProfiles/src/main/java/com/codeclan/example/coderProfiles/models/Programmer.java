@@ -66,6 +66,10 @@ public class Programmer {
     public Programmer() {
     }
 
+    public List<Language> getLanguages() {
+        return languages;
+    }
+
     public String getJobTitle() {
         return jobTitle;
     }

@@ -48,6 +48,7 @@ public class DataLoader implements ApplicationRunner {
         languageRepository.save(javaScript);
 
         cruncher.addLanguage(ruby);
+        cruncher.addLanguage(cSharp);
         programmerRepository.save(cruncher);
 
         katie.addLanguage(ruby);

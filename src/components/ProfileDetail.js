@@ -54,7 +54,7 @@ class ProfileDetail extends Component{
                                 </div>
                                 <h4> {this.props.profileDescription}</h4>
                                     <div className ="langauge">
-                                        <p>{this.props.languages}</p>
+                                        <p>{this.props.languages[0].name}</p>
                                     </div>
                                 </li>
                             </div>
