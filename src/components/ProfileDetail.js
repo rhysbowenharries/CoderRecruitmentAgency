@@ -21,15 +21,16 @@ class ProfileDetail extends Component{
         this.setState({toProfileList: true})
     }
 
+    
 
 
     render(){
         if(this.state.toProfileList){
 
-                return<Redirect to={
-                    path:{`/start_hire/${this.props.id}`},
-                    state: {this.props}
-                    }/>
+                return<Redirect to={{
+                    pathname:`/start_hire/${this.props.id}`,
+                    state: {props: this.props}
+                }}/>
         }else{
             return (
                 <Fragment>
