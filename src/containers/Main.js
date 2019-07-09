@@ -38,9 +38,10 @@ class Main extends Component {
   }
 
   addProfile(profile) {
-    profile.id = this.state.profiles.length + 1;
+    // works without id for now, might need later
+    // profile.id = this.state.profiles.length + 1;
     this.setState(prevState => {
-      return {profiles: [profile, ...prevState.profiles]}
+      return {profiles: [...prevState.profiles, profile]}
     })
     const url = 'http://localhost:8080/programmers'
     fetch(url, {
