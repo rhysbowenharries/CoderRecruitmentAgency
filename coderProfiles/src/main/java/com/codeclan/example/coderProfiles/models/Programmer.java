@@ -16,18 +16,30 @@ public class Programmer {
     @Column(name = "languages")
     private String languages;
 
+    @Column(name = "profile_description")
+    private String profileDescription;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
 
-    public Programmer(String firstName, String lastName, String languages){
+    public Programmer(String firstName, String lastName, String languages, String profileDescription){
         this.firstName = firstName;
         this.lastName = lastName;
         this.languages = languages;
+        this.profileDescription = profileDescription;
     }
 
     public Programmer() {
+    }
+
+    public String getProfileDescription() {
+        return profileDescription;
+    }
+
+    public void setProfileDescription(String profileDescription) {
+        this.profileDescription = profileDescription;
     }
 
     public Long getId() {

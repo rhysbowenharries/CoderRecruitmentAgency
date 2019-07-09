@@ -16,6 +16,7 @@ const ProfileList = (props) => {
         first_name = {profile.firstName}
         last_name = {profile.lastName}
         languages = {profile.languages}
+        profileDescription = {profile.profileDescription}
         submit = {handleProfileId}
         />
     })

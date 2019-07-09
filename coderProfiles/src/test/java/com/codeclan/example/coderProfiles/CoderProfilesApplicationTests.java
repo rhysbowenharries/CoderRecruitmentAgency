@@ -19,11 +19,11 @@ public class CoderProfilesApplicationTests {
 	public void contextLoads() {
 	}
 
-	@Test
-	public void createProfile(){
-		Programmer alex = new Programmer("Alex", "Baz", "JavaScript");
-		programmerRepository.save(alex);
-	}
+//	@Test
+//	public void createProfile(){
+//		Programmer alex = new Programmer("Alex", "Baz", "JavaScript");
+//		programmerRepository.save(alex);
+//	}
 
 
 }

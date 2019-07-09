@@ -106,7 +106,7 @@ class FormComponent extends Component{
                     </select>
                     <br/>
                     <label htmlFor="salary">Where would you like to work?</label><br/><br/>
-                    <input  id="salary" type="text" placeholder="Salary" onChange= {this.handleSalaryChange}>
+                    <input  id="salary" type="number" placeholder="Salary" onChange= {this.handleSalaryChange}>
                     </input>
                     <br/>
 
