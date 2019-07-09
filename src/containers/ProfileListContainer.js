@@ -20,7 +20,7 @@ class ProfileListContainer extends Component{
             <Fragment>
                 <div className = "search-options">
                 <div className = "inline">
-                <label for="select-job">Filter by job-title</label><br/>
+                <label htmlFor="select-job">Filter by job-title</label><br/>
                 <select id="select-job" className = "select-list">
                     <option> Select job tiles ... </option>
                     <option value = "Software Engineer"> Software Engineer </option>
@@ -33,7 +33,7 @@ class ProfileListContainer extends Component{
                 </div>
 
                 <div className = "inline">
-                <label for="select-language">Filter by language</label><br/>
+                <label htmlFor="select-language">Filter by language</label><br/>
                 <select id="select-language" className = "select-list">
                     <option> Select langauge... </option>
                     <option value = "Ruby"> Ruby  </option>

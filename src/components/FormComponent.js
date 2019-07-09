@@ -7,13 +7,13 @@ class FormComponent extends Component{
         super(props)
         this.state = {
                 id: 0,
-                first_name: "",
-                last_name: "",
+                firstName: "",
+                lastName: "",
                 location: "",
                 languages: "",
                 askingSalary: null,
                 roleType: '',
-                profile_description: "",
+                profileDescription: "",
                 jobTitle:""
 
 
@@ -26,14 +26,15 @@ class FormComponent extends Component{
             this.handleJobTitleChange = this.handleJobTitleChange.bind(this)
             this.handleSalaryChange = this.handleSalaryChange.bind(this)
             this.handleRoleChange = this.handleRoleChange.bind(this)
+            this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleFirstNameChange(event){
-        this.setState({first_name: event.target.value})
+        this.setState({firstName: event.target.value})
     }
 
     handleLastNameChange(event){
-        this.setState({last_name: event.target.value})
+        this.setState({lastName: event.target.value})
     }
 
     handleLocationChange(event){
@@ -45,7 +46,7 @@ class FormComponent extends Component{
     }
 
     handleProfileDescriptionChange(event){
-        this.setState({profile_description: event.target.value})
+        this.setState({profileDescription: event.target.value})
     }
 
     handleRoleChange(event){
@@ -60,6 +61,17 @@ class FormComponent extends Component{
         this.setState({jobTitle: event.target.value})
     }
 
+    handleSubmit(event){
+       event.preventDefault()
+       this.props.addProfile({
+           firstName: this.state.firstName,
+           lastName: this.state.lastName,
+           languages: this.state.languages,
+           profileDescription: this.state.profileDescription
+       });
+       this.setState({ toProfileList: true });
+   }
+
 
 
     render(){
@@ -70,30 +82,30 @@ class FormComponent extends Component{
                 <div className = "form">
                 <form className="form-items" onSubmit = {this.handleSubmit}>
                     <p> All fields are required unless otherwise stated. </p><br/><br/>
-                    <label for="first_name">What is your first name?</label><br/><br/>
+                    <label htmlFor="first_name">What is your first name?</label><br/><br/>
                     <input id="first_name" type="text" placeholder="First name" onChange= {this.handleFirstNameChange}>
                     </input>
                     <br/>
-                    <label for="last_name">What is your last name?</label><br/><br/>
+                    <label htmlFor="last_name">What is your last name?</label><br/><br/>
                     <input  id="last_name" type="text" placeholder="Last name" onChange= {this.handleLastNameChange}>
                     </input>
                     <br/>
-                    <label for="location">Where would you like to work?</label><br/><br/>
+                    <label htmlFor="location">Where would you like to work?</label><br/><br/>
                     <input  id="location" type="text" placeholder="Location" onChange= {this.handleLocationChange}>
                     </input>
                     <br/>
-                    <label for="role">What role would you like(Permanant/Contract)?</label><br/><br/>
+                    <label htmlFor="role">What role would you like(Permanant/Contract)?</label><br/><br/>
                     <select  onChange= {this.handleRoleChange} id="role" placeholder="" className="select">
                         <option value = "Permanant"> Permanant </option>
                         <option value = "Contract"> Contract </option>
                     </select>
                     <br/>
-                    <label for="salary">Where would you like to work?</label><br/><br/>
+                    <label htmlFor="salary">Where would you like to work?</label><br/><br/>
                     <input  id="salary" type="text" placeholder="Salary" onChange= {this.handleSalaryChange}>
                     </input>
                     <br/>
 
-                    <label for="profession">What is your job title?</label><br/><br/>
+                    <label htmlFor="profession">What is your job title?</label><br/><br/>
                     <select  onChange= {this.handleJobTitleChange} id="last_name" placeholder="Last name" className="select">
                         <option value = "Software Engineer"> Software Engineer </option>
                         <option value = "Engineer Management"> Engineer Management </option>
@@ -103,11 +115,11 @@ class FormComponent extends Component{
                         <option value = "Mobile App Engineer"> Mobile App Engineer </option>
                     </select>
                     <br/>
-                    <label for="language">What languages do you know?</label><br/><br/>
+                    <label htmlFor="language">What languages do you know?</label><br/><br/>
                     <input  id="language" type="text" placeholder="Languages" onChange= {this.handleLanguageChange}>
                     </input>
                     <br/>
-                    <label for="profile">Tell us a little about yourself.</label><br/><br/>
+                    <label htmlFor="profile">Tell us a little about yourself.</label><br/><br/>
                     <textarea id="profile" placeholder="Profile Description" onChange= {this.handleProfileDescriptionChange}>
                     </textarea>
                     <br/>
