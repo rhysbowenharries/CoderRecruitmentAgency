@@ -186,7 +186,7 @@ class FormComponent extends Component{
                                     </input>
 
 
-
+                                    <Checkbox/>
 
                                     {/* <InputLabel htmlFor="select-multiple-checkbox">Tag</InputLabel>
                                     <Select
@@ -240,9 +240,8 @@ class FormComponent extends Component{
                         </select>
                         <br/>
                         <label htmlFor="language">What languages do you know?</label><br/><br/>
-                        {/* <input  id="language" type="text" placeholder="Languages" value={this.state.languages}  onChange= {this.handleLanguageChange}>
-                        </input> */}
-                        <Checkbox id="language" type="text" placeholder="Languages" value={this.state.languages}  onChange= {this.handleLanguageChange}/>
+                        <input  id="language" type="text" placeholder="Languages" value={this.state.languages}  onChange= {this.handleLanguageChange}>
+                        </input>
                         <br/>
                         <label htmlFor="profile">Tell us a little about yourself.</label><br/><br/>
                         <textarea id="profile" placeholder="Profile Description" value={this.state.profileDescription}  onChange= {this.handleProfileDescriptionChange}>
