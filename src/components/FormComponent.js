@@ -7,7 +7,7 @@ class FormComponent extends Component{
     constructor(props){
         super(props)
         this.state = {
-                
+
                 firstName: "",
                 lastName: "",
                 location: "",
@@ -44,7 +44,7 @@ class FormComponent extends Component{
     }
 
     handleLanguageChange(event){
-        this.setState({languages: event.target.value})
+        this.setState({languages: [event.target.value]})
     }
 
     handleProfileDescriptionChange(event){
