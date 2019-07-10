@@ -156,3 +156,26 @@ a:hover{
 h4{
     font-size:21px;
 }
+
+.edit-button{
+    background-color: Transparent;
+    border: 2px solid orange;
+    color: orange;
+    border-radius: 50px;
+    width: 200px;
+    height: 50px;
+    float: right;
+    padding: 0% !important;
+    margin: 1% !important
+}
+
+.delete-button{
+    background-color: red;
+
+    border-radius: 50px;
+    width: 200px;
+    height: 50px;
+    float: right;
+    padding: 0% !important;
+    margin: 1% !important
+}
