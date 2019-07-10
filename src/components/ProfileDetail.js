@@ -9,6 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import Icon from '@material-ui/core/Icon';
 import Edit from './edit.png'
+import {Link} from 'react-router-dom';
 
 
 
@@ -85,10 +86,7 @@ class ProfileDetail extends Component{
                                     <h3> Role: <br/><br/>{this.props.role} </h3><br/>
                                     <h3>Speciality:<br/><br/> {this.props.jobTitle}</h3><br/>
                                 </div>
-                                <h4> {this.props.profileDescription}</h4>
-                                <div className ="langauge">
-                                    <p>{this.props.languages[0].name}</p>
-                                </div>
+                            
 
                                 <Link to="/sign_up"><button onClick = {this.handleToggleProfile}  className="edit-button" value={this.props.id}>Edit Profile</button></Link>
                                 <button onClick = {this.handleToggleProfile}  className="delete-button" value={this.props.id}>Delete Profile</button>
