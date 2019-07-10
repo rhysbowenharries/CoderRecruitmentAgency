@@ -5,6 +5,7 @@ import placeholder from "./placeholder.png"
 import ProfileIndividualEdit from "../containers/ProfileIndividualEdit"
 import {Redirect} from 'react-router-dom';
 import Avatar from '@material-ui/core/Avatar';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import Icon from '@material-ui/core/Icon';
@@ -50,13 +51,21 @@ class ProfileDetail extends Component{
     }
 
 
+    
 
+    languageMapper = (props) => {
+     const mappedLanguages = props.languages.map(language => {return <li>{language.name}</li>})  
+     console.log("language mapper",mappedLanguages);
+      
+    return mappedLanguages
+
+    }
 
     render(){
 
         return (
             <Fragment>
-                {console.log(this.props)}
+                {/* {console.log("render log",this.props)} */}
 
                 <div className ="list-profile">
 
@@ -74,9 +83,9 @@ class ProfileDetail extends Component{
                             </div>
 
 
-                            <div className ="langauge">
-                                <p>{this.props.languages[0].name}</p>
-                            </div>
+                            <ul className ="langauge">
+                                {this.languageMapper(this.props)}
+                            </ul>
 
                             <div ref={this.extraProfileInfoContainer} className = "hidden">
 
@@ -91,10 +100,15 @@ class ProfileDetail extends Component{
                                     <h3> Role: <br/><br/>{this.props.role} </h3><br/>
                                     <h3>Speciality:<br/><br/> {this.props.jobTitle}</h3><br/>
                                 </div>
+<<<<<<< HEAD
 
 
                                 <Link to= "/edit_profile"><button className="edit-button" onClick ={this.handleID} value ={JSON.stringify(this.props)}>Edit Profile</button></Link>
                                 <button onClick = {this.handleToggleProfile}  className="delete-button" value={this.props.id}>Delete Profile</button>
+=======
+                                <h4> {this.props.profileDescription}</h4>
+                              <h4></h4> 
+>>>>>>> develop
                             </div>
                         </li>
                     </div>
