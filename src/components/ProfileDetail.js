@@ -77,19 +77,21 @@ class ProfileDetail extends Component{
                                 <h4 className='sub-description'> {this.props.profileDescription}</h4>
 
                                 <div className='sub'>
-                                <h3> Asking Salary:<br/><br/> £{this.props.salary} </h3><br/>
-                                <h3> Location Base:<br/><br/>  {this.props.location} </h3><br/>
+                                    <h3> Asking Salary:<br/><br/> £{this.props.salary} </h3><br/>
+                                    <h3> Location Base:<br/><br/>  {this.props.location} </h3><br/>
                                 </div>
 
                                 <div  className='sub padding-bottom'>
-                                <h3> Role: <br/><br/>{this.props.role} </h3><br/>
-                                <h3>Speciality:<br/><br/> {this.props.jobTitle}</h3><br/>
+                                    <h3> Role: <br/><br/>{this.props.role} </h3><br/>
+                                    <h3>Speciality:<br/><br/> {this.props.jobTitle}</h3><br/>
                                 </div>
-
+                                <h4> {this.props.profileDescription}</h4>
+                                <div className ="langauge">
+                                    <p>{this.props.languages[0].name}</p>
+                                </div>
                             </div>
                         </li>
                     </div>
-
                 </div>
             </Fragment>
         )

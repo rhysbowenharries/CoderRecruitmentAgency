@@ -1,6 +1,8 @@
 package com.codeclan.example.coderProfiles.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="programmers")
@@ -12,9 +14,6 @@ public class Programmer {
 
     @Column(name = "last_name")
     private String lastName;
-
-    @Column(name = "languages")
-    private String languages;
 
     @Column(name = "profile_description")
     private String profileDescription;
@@ -31,24 +30,44 @@ public class Programmer {
     @Column(name = "job_title")
     private String jobTitle;
 
+    @ManyToMany
+    @JoinTable(
+            name = "programmers_languages",
+            joinColumns = { @JoinColumn(
+                    name = "programmer_id",
+                    nullable = false,
+                    updatable = false)
+            },
+            inverseJoinColumns = { @JoinColumn(
+            name = "language_id",
+            nullable = false,
+            updatable = false)
+    }
+    )
+    private List<Language> languages;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
 
-    public Programmer(String firstName, String lastName, String languages, String profileDescription, String role, String location, String salary, String jobTitle){
+    public Programmer(String firstName, String lastName, String profileDescription, String role, String location, String salary, String jobTitle){
         this.firstName = firstName;
         this.lastName = lastName;
-        this.languages = languages;
         this.profileDescription = profileDescription;
         this.role = role;
         this.location = location;
         this.salary = salary;
         this.jobTitle = jobTitle;
+        this.languages = new ArrayList<>();
 
     }
 
     public Programmer() {
+    }
+
+    public List<Language> getLanguages() {
+        return languages;
     }
 
     public String getJobTitle() {
@@ -115,11 +134,8 @@ public class Programmer {
         this.lastName = lastName;
     }
 
-    public String getLanguages() {
-        return languages;
-    }
 
-    public void setLanguages(String languages) {
-        this.languages = languages;
+    public void addLanguage(Language language) {
+        this.languages.add(language);
     }
 }

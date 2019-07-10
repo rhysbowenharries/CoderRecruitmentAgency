@@ -86,85 +86,65 @@ class FormComponent extends Component{
 
 
     render(){
-        if (this.state.toProfileList) {
-            return <Redirect to='/start_hire' />
-        } else {
-            return(
-                <Fragment>
-                    <h1 className = "form-header">Profile Information</h1>
-                    <div className = "form-container">
-                        <div className = "form">
-                            <form className="form-items" onSubmit = {this.handleSubmit}>
-                                <p>All fields are required unless otherwise stated. </p><br/><br/>
-                                <label htmlFor="first_name">What is your first name?</label><br/><br/>
-                                <input id="first_name" type="text" placeholder="First name" onChange= {this.handleFirstNameChange} required>
-                                </input>
-                                <br/>
-                                <label htmlFor="last_name">What is your last name?</label><br/><br/>
-                                <input  id="last_name" type="text" placeholder="Last name" onChange= {this.handleLastNameChange} required>
-                                </input>
-                                <br/>
-                                <label htmlFor="location">Where would you like to work?</label><br/><br/>
-                                <input  id="location" type="text" placeholder="Location" onChange= {this.handleLocationChange} required>
-                                </input>
-                                <br/>
-                                <label htmlFor="role">What role would you like(Permanant/Contract)?</label><br/><br/>
-                                {/* <select  onChange= {this.handleRoleChange} id="role" placeholder="" className="select"> */}
-                                <FormControlLabel
-                                    onChange= {this.handleRoleChange}
-                                    id="role"
-                                    placeholder=""
-                                    value="permenant"
-                                    control={<Checkbox color="primary" />}
-                                    label="Permenant"
-                                    labelPlacement="Left"
-                                    required
-                                />
+      if (this.state.toProfileList) {
+         return <Redirect to='/start_hire' />
+     } else {
+        return(
+            <Fragment>
+            <h1 className = "form-header"> Fundamentals </h1>
+            <div className = "form-container">
+                <div className = "form">
+                <form className="form-items" onSubmit = {this.handleSubmit}>
+                    <p> All fields are required unless otherwise stated. </p><br/><br/>
+                    <label htmlFor="first_name">What is your first name?</label><br/><br/>
+                    <input id="first_name" type="text" placeholder="First name" onChange= {this.handleFirstNameChange}>
+                    </input>
+                    <br/>
+                    <label htmlFor="last_name">What is your last name?</label><br/><br/>
+                    <input  id="last_name" type="text" placeholder="Last name" onChange= {this.handleLastNameChange}>
+                    </input>
+                    <br/>
+                    <label htmlFor="location">Where would you like to work?</label><br/><br/>
+                    <input  id="location" type="text" placeholder="Location" onChange= {this.handleLocationChange}>
+                    </input>
+                    <br/>
+                    <label htmlFor="role">What role would you like(Permanant/Contract)?</label><br/><br/>
+                    <select  onChange= {this.handleRoleChange} id="role" placeholder="" className="select" required value={this.state.role}>
+                        <option disabled value = ""> Select Role Type </option>
+                        <option value = "Permanant"> Permanant </option>
+                        <option value = "Contract"> Contract </option>
+                    </select>
+                    <br/>
+                    <label htmlFor="salary">Ideal salary</label><br/><br/>
+                    <input  id="salary" type="number" placeholder="Salary" onChange= {this.handleSalaryChange}>
+                    </input>
+                    <br/>
 
-                                <FormControlLabel
-                                    onChange= {this.handleRoleChange}
-                                    id="role"
-                                    placeholder=""
-                                    value="contract"
-                                    control={<Checkbox color="primary" />}
-                                    label="Contract"
-                                    labelPlacement="Left"
-                                    required
-                                />
-                                {/* </select> */}
-                                <br/>
-                                <br/>
-                                <br/>
-                                <label htmlFor="salary">Ideal salary</label><br/><br/>
-                                <input  id="salary" type="number" placeholder="Salary" onChange= {this.handleSalaryChange} required>
-                                </input>
-                                <br/>
-
-                                <label htmlFor="profession">What is your job title?</label><br/><br/>
-                                <select  onChange= {this.handleJobTitleChange} id="last_name" placeholder="Last name" className="select" required>
-                                    <option value = "Software Engineer"> Software Engineer </option>
-                                    <option value = "Engineer Management"> Engineer Management </option>
-                                    <option value = "UX"> UX Designer </option>
-                                    <option value = "Product Manager"> Product Manager </option>
-                                    <option value = "Front-end Developer"> Front-end Developer </option>
-                                    <option value = "Mobile App Engineer"> Mobile App Engineer </option>
-                                </select>
-                                <br/>
-                                <label htmlFor="language">What languages do you know?</label><br/><br/>
-                                <input  id="language" type="text" placeholder="Languages" onChange= {this.handleLanguageChange} required>
-                                </input>
-                                <br/>
-                                <label htmlFor="profile">Tell us a little about yourself.</label><br/><br/>
-                                <textarea className= "textArea" id="profile" placeholder="Profile Description" onChange= {this.handleProfileDescriptionChange} required>
-                                </textarea>
-                                <br/>
-                                <button type="submit"> Save Profile</button>
-                            </form>
-                        </div>
-                    </div>
-                </Fragment>
-            )}
-        }
+                    <label htmlFor="profession">What is your job title?</label><br/><br/>
+                    <select  onChange= {this.handleJobTitleChange} id="last_name" placeholder="Last name" className="select">
+                        <option value = "Software Engineer"> Software Engineer </option>
+                        <option value = "Engineer Management"> Engineer Management </option>
+                        <option value = "UX"> UX Designer </option>
+                        <option value = "Product Manager"> Product Manager </option>
+                        <option value = "Front-end Developer"> Front-end Developer </option>
+                        <option value = "Mobile App Engineer"> Mobile App Engineer </option>
+                    </select>
+                    <br/>
+                    <label htmlFor="language">What languages do you know?</label><br/><br/>
+                    <input  id="language" type="text" placeholder="Languages" onChange= {this.handleLanguageChange}>
+                    </input>
+                    <br/>
+                    <label htmlFor="profile">Tell us a little about yourself.</label><br/><br/>
+                    <textarea id="profile" placeholder="Profile Description" onChange= {this.handleProfileDescriptionChange}>
+                    </textarea>
+                    <br/>
+                    <button type="submit"> Save Profile</button>
+                </form>
+                </div>
+            </div>
+            </Fragment>
+        )}
     }
+}
 
     export default FormComponent
