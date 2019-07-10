@@ -42,6 +42,7 @@ const Checkbox = (props) => {
           onChange={handleCheckboxChange}
           id={language._self}
           name={language._self}
+          value={language._self}
         />
         <label for={language._self}>{language.name}</label>
       </Fragment>

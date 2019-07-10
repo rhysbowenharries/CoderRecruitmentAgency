@@ -222,7 +222,8 @@ class FormComponent extends Component{
                         <br/>
 
                         <label htmlFor="profession">What is your job title?</label><br/><br/>
-                        <select  onChange= {this.handleJobTitleChange} id="profession" placeholder="Last name"  value={this.state.jobTitle} className="select">
+                        <select  onChange= {this.handleJobTitleChange} id="profession" required  value={this.state.jobTitle} className="select">
+                            <option disabled value = ""> Select Job Title </option>
                             <option value = "Software Engineer"> Software Engineer </option>
                             <option value = "Engineer Management"> Engineer Management </option>
                             <option value = "UX"> UX Designer </option>
@@ -233,7 +234,7 @@ class FormComponent extends Component{
                         <br/>
                         <label htmlFor="language">What languages do you know?</label><br/><br/>
                         <Checkbox/>
-                        
+
                         <br/>
                         <label htmlFor="profile">Tell us a little about yourself.</label><br/><br/>
                         <textarea id="profile" placeholder="Profile Description" value={this.state.profileDescription}  onChange= {this.handleProfileDescriptionChange}>
