@@ -8,6 +8,7 @@ package com.codeclan.example.coderProfiles.projections;
 @Projection(name= "embedLanguage", types = Programmer.class)
 public interface EmbedLanguage {
 
+    long getId();
     String getFirstName();
     String getLastName();
     String getJobTitle();

@@ -10,8 +10,8 @@ class ProfileListContainer extends Component{
         this.handleProfileIdContainer = this.handleProfileIdContainer.bind(this)
     }
 
-    handleProfileIdContainer(eventID){
-        this.props.setProfileID(eventID)
+    handleProfileIdContainer(currentProfile){
+        this.props.setProfileID(currentProfile)
     }
 
 

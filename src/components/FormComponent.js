@@ -28,7 +28,6 @@ class FormComponent extends Component{
             }
         }else{
             this.state = {
-
                 firstName: "",
                 lastName: "",
                 location: "",

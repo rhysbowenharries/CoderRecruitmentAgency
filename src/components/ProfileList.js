@@ -5,8 +5,8 @@ import "./ProfileList.css"
 
 const ProfileList = (props) => {
 
-    const handleProfileId = (eventID) => {
-        props.setProfileID(eventID)
+    const handleProfileId = (currentProfile) => {
+        props.setProfileID(currentProfile)
     }
 
     const options = props.profiles.map( (profile, index) => {

@@ -14,15 +14,18 @@ class Main extends Component {
         super(props);
         this.state = {
             profiles: [],
-            profileID:null
+            currentProfile:null
         }
         this.handleProfile = this.handleProfile.bind(this)
         this.addProfile = this.addProfile.bind(this)
+        
     }
 
-    handleProfile(eventID){
-        this.setState({profileID:eventID})
+    handleProfile(currentProfile){
+        this.setState({currentProfile:currentProfile})
     }
+
+
 
     componentDidMount() {
         const url = 'http://localhost:8080/programmers';
@@ -76,7 +79,9 @@ class Main extends Component {
                                 return <ProfileListContainer setProfileID={this.handleProfile} profiles={this.state.profiles}/>
                             }}/>
                             <Route path = '/edit_profile' render={() => {
-                                return <FormComponent profileData={this.state.profiles.forEach((key) => {if(key.id === this.state.profileID){return key}})} callBack={this.addProfile}/>
+                                // const profile = this.state.profiles.find((profile) => {profile.id == this.state.profileID})
+                                return <FormComponent profileData={this.state.currentProfile} callBack={this.addProfile}/>
+                                // return <FormComponent profileData={this.state.profiles.forEach((profile) => {if(profile.id == this.state.profileID){return profile}})} callBack={this.addProfile}/>
                             }}/>
                         </Switch>
                     </Fragment>

@@ -28,7 +28,7 @@ class ProfileDetail extends Component{
     }
 
     handleID = (event) => {
-        console.log();
+        console.log(event.target.value);
         this.props.setProfileID(event.target.value)
     }
 
@@ -94,7 +94,7 @@ class ProfileDetail extends Component{
                                 </div>
 
 
-                                <Link to= "/edit_profile"><button className="edit-button" onClick ={this.handleID} value={this.props.id}>Edit Profile</button></Link>
+                                <Link to= "/edit_profile"><button className="edit-button" onClick ={this.handleID} value={[this.props]}>Edit Profile</button></Link>
                                 <button onClick = {this.handleToggleProfile}  className="delete-button" value={this.props.id}>Delete Profile</button>
                             </div>
                         </li>
