@@ -29,6 +29,12 @@ class ProfileDetail extends Component{
         //             state: {this.props}
         //             }/>
         // }else{
+
+        // = this.props.languages.map
+        // <div className ="langauge">
+        //     <p>{this.props.languages[0].name}</p>
+        // </div>
+
             return (
                 <Fragment>
                     {console.log(this.props)}
@@ -53,9 +59,7 @@ class ProfileDetail extends Component{
                                     <p>Speciality: {this.props.jobTitle}</p>
                                 </div>
                                 <h4> {this.props.profileDescription}</h4>
-                                    <div className ="langauge">
-                                        <p>{this.props.languages[0].name}</p>
-                                    </div>
+                                   {/* {new thing in here} */}
                                 </li>
                             </div>
 
