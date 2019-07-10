@@ -51,12 +51,12 @@ class ProfileDetail extends Component{
     }
 
 
-    
+
 
     languageMapper = (props) => {
-     const mappedLanguages = props.languages.map(language => {return <li>{language.name}</li>})  
+     const mappedLanguages = props.languages.map(language => {return <li>{language.name}</li>})
      console.log("language mapper",mappedLanguages);
-      
+
     return mappedLanguages
 
     }
@@ -100,15 +100,9 @@ class ProfileDetail extends Component{
                                     <h3> Role: <br/><br/>{this.props.role} </h3><br/>
                                     <h3>Speciality:<br/><br/> {this.props.jobTitle}</h3><br/>
                                 </div>
-<<<<<<< HEAD
-
-
                                 <Link to= "/edit_profile"><button className="edit-button" onClick ={this.handleID} value ={JSON.stringify(this.props)}>Edit Profile</button></Link>
                                 <button onClick = {this.handleToggleProfile}  className="delete-button" value={this.props.id}>Delete Profile</button>
-=======
-                                <h4> {this.props.profileDescription}</h4>
-                              <h4></h4> 
->>>>>>> develop
+
                             </div>
                         </li>
                     </div>
