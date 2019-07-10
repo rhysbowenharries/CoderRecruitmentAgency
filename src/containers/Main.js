@@ -38,10 +38,7 @@ class Main extends Component {
         .catch(err=>console.error);
     }
 
-<<<<<<< HEAD
   addProfile(profile) {
-    // works without id for now, might need later
-    // profile.id = this.state.profiles.length + 1;
     const url = 'http://localhost:8080/programmers'
     fetch(url, {
       method: 'POST',
@@ -65,33 +62,7 @@ class Main extends Component {
       return {profiles: [...prevState.profiles, newProfile]}
     }))
   }
-=======
-    addProfile(profile) {
-        // works without id for now, might need later
-        // profile.id = this.state.profiles.length + 1;
-        this.setState(prevState => {
-            return {profiles: [...prevState.profiles, profile]}
-        })
-        const url = 'http://localhost:8080/programmers'
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                firstName: profile.firstName,
-                lastName: profile.lastName,
-                languages: profile.languages,
-                role: profile.role,
-                location: profile.location,
-                salary: profile.salary,
-                jobTitle: profile.jobTitle,
-                profileDescription: profile.profileDescription
-            })
-        })
-    }
->>>>>>> develop
+
 
 
     render(){

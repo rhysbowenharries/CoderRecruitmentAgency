@@ -12,8 +12,6 @@ class FormComponent extends Component{
     constructor(props){
         super(props)
         this.state = {
-
-<<<<<<< HEAD
                 firstName: "",
                 lastName: "",
                 location: "",
@@ -23,19 +21,6 @@ class FormComponent extends Component{
                 profileDescription: "",
                 jobTitle:"",
                 toProfileList: false
-=======
-            firstName: "",
-            lastName: "",
-            location: "",
-            languages:"",
-            salary: null,
-            role: "",
-            profileDescription: "",
-            jobTitle:"",
-            toProfileList: false
->>>>>>> develop
-
-
         }
         this.handleFirstNameChange = this.handleFirstNameChange.bind(this)
         this.handleLastNameChange = this.handleLastNameChange.bind(this)
