@@ -69,7 +69,7 @@ class ProfileDetail extends Component{
 
 
                             <div className ="langauge">
-                                <p>{this.props.languages}</p>
+                                <p>{this.props.languages[0].name}</p>
                             </div>
 
                             <div ref={this.extraProfileInfoContainer} className = "hidden">

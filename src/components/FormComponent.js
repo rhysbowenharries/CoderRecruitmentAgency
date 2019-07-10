@@ -16,7 +16,7 @@ class FormComponent extends Component{
             firstName: "",
             lastName: "",
             location: "",
-            languages: "",
+            languages:"",
             salary: null,
             role: "",
             profileDescription: "",
