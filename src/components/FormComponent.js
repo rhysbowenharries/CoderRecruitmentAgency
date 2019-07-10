@@ -223,7 +223,7 @@ class FormComponent extends Component{
 
                         <label htmlFor="profession">What is your job title?</label><br/><br/>
                         <select  onChange= {this.handleJobTitleChange} id="profession" required  value={this.state.jobTitle} className="select">
-                            <option disabled value = ""> Select Job Title </option>
+                            <option disabled value = "nah"> Select Job Title </option>
                             <option value = "Software Engineer"> Software Engineer </option>
                             <option value = "Engineer Management"> Engineer Management </option>
                             <option value = "UX"> UX Designer </option>

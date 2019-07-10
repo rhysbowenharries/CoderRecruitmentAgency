@@ -22,9 +22,11 @@ class ProfileDetail extends Component{
         this.state = {
             toProfileList: false,
         }
+        this.profile = props
         this.extraProfileInfoContainer = React.createRef();
         this.handleButtonSelection = this.handleButtonSelection.bind(this)
         this.handleID = this.handleID.bind(this)
+        this.languageMapper = this.languageMapper.bind(this)
 
     }
 
