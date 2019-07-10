@@ -2,7 +2,7 @@ import React,{Component, Fragment} from 'react'
 import "./ProfileDetail.css"
 import profileimage from "./ppl.jpg"
 import placeholder from "./placeholder.png"
-import ProfileIndividual from "../containers/ProfileIndividual"
+import ProfileIndividualEdit from "../containers/ProfileIndividualEdit"
 import {Redirect} from 'react-router-dom';
 import Avatar from '@material-ui/core/Avatar';
 import { makeStyles } from '@material-ui/core/styles';
@@ -19,11 +19,17 @@ class ProfileDetail extends Component{
     constructor(props){
         super(props)
         this.state = {
-            toProfileList: false
+            toProfileList: false,
         }
         this.extraProfileInfoContainer = React.createRef();
         this.handleButtonSelection = this.handleButtonSelection.bind(this)
+        this.handleID = this.handleID.bind(this)
 
+    }
+
+    handleID = (event) => {
+        console.log();
+        this.props.setProfileID(event.target.value)
     }
 
     handleButtonSelection = (event) =>{
@@ -86,9 +92,9 @@ class ProfileDetail extends Component{
                                     <h3> Role: <br/><br/>{this.props.role} </h3><br/>
                                     <h3>Speciality:<br/><br/> {this.props.jobTitle}</h3><br/>
                                 </div>
-                            
 
-                                <Link to="/sign_up"><button onClick = {this.handleToggleProfile}  className="edit-button" value={this.props.id}>Edit Profile</button></Link>
+
+                                <Link to= "/edit_profile"><button className="edit-button" onClick ={this.handleID} value={this.props.id}>Edit Profile</button></Link>
                                 <button onClick = {this.handleToggleProfile}  className="delete-button" value={this.props.id}>Delete Profile</button>
                             </div>
                         </li>

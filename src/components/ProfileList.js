@@ -6,13 +6,13 @@ import "./ProfileList.css"
 const ProfileList = (props) => {
 
     const handleProfileId = (eventID) => {
-        props.submit(eventID)
+        props.setProfileID(eventID)
     }
 
     const options = props.profiles.map( (profile, index) => {
         return <ProfileDetail
-        
-        
+
+
         key = {index}
         id = {profile.id}
         first_name = {profile.firstName}
@@ -23,7 +23,7 @@ const ProfileList = (props) => {
         location = {profile.location}
         salary = {profile.salary}
         jobTitle = {profile.jobTitle}
-        submit = {handleProfileId}
+        setProfileID = {handleProfileId}
         />
     })
 

@@ -11,7 +11,7 @@ class ProfileListContainer extends Component{
     }
 
     handleProfileIdContainer(eventID){
-        this.props.submit(eventID)
+        this.props.setProfileID(eventID)
     }
 
 
@@ -33,7 +33,7 @@ class ProfileListContainer extends Component{
                 </div>
 
                 </div>
-                <ProfileList submit= {this.handleProfileIdContainer} profiles={this.props.profiles}/>
+                <ProfileList setProfileID= {this.handleProfileIdContainer} profiles={this.props.profiles}/>
             </Fragment>
         )
     }

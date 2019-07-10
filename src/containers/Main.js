@@ -4,7 +4,7 @@ import ProfileListContainer from './ProfileListContainer';
 import FormComponent from '../components/FormComponent'
 import Navbar from '../components/Navbar'
 import Home from '../components/Home'
-import ProfileIndividual from "./ProfileIndividual"
+import ProfileIndividualEdit from "./ProfileIndividualEdit"
 import {Link} from 'react-router-dom'
 
 
@@ -14,19 +14,14 @@ class Main extends Component {
         super(props);
         this.state = {
             profiles: [],
-            profileid:null
+            profileID:null
         }
         this.handleProfile = this.handleProfile.bind(this)
         this.addProfile = this.addProfile.bind(this)
     }
 
-
-
     handleProfile(eventID){
-        this.setState({profileid:eventID})
-        // return (
-        //     <Link to=`/start_hire/${this.state.profileid}` component=<ProfileIndividual profile{this.state.profileid}/>
-        // )
+        this.setState({profileID:eventID})
     }
 
     componentDidMount() {
@@ -75,13 +70,13 @@ class Main extends Component {
                         <Switch>
                             <Route exact path="/" component={Home}/>
                             <Route path = "/sign_up" render={() => {
-                                return <FormComponent addProfile={this.addProfile}/>
+                                return <FormComponent callBack={this.addProfile} />
                             }}/>
                             <Route exact path = "/start_hire"  render={() => {
-                                return <ProfileListContainer submit={this.handleProfile} profiles={this.state.profiles}/>
+                                return <ProfileListContainer setProfileID={this.handleProfile} profiles={this.state.profiles}/>
                             }}/>
-                            <Route path = '/start_hire/{this.state.profileid}' render={() => {
-                                return <ProfileIndividual profile={this.state.profileid}/>
+                            <Route path = '/edit_profile' render={() => {
+                                return <FormComponent profileData={this.state.profiles.forEach((key) => {if(key.id === this.state.profileID){return key}})} callBack={this.addProfile}/>
                             }}/>
                         </Switch>
                     </Fragment>
