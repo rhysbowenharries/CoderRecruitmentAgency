@@ -12,18 +12,15 @@ class FormComponent extends Component{
     constructor(props){
         super(props)
         this.state = {
-
-            firstName: "",
-            lastName: "",
-            location: "",
-            languages:"",
-            salary: null,
-            role: "",
-            profileDescription: "",
-            jobTitle:"",
-            toProfileList: false
-
-
+                firstName: "",
+                lastName: "",
+                location: "",
+                languages: "",
+                salary: null,
+                role: "",
+                profileDescription: "",
+                jobTitle:"",
+                toProfileList: false
         }
         this.handleFirstNameChange = this.handleFirstNameChange.bind(this)
         this.handleLastNameChange = this.handleLastNameChange.bind(this)
@@ -49,7 +46,7 @@ class FormComponent extends Component{
     }
 
     handleLanguageChange(event){
-        this.setState({languages: event.target.value})
+        this.setState({languages: [event.target.value]})
     }
 
     handleProfileDescriptionChange(event){
