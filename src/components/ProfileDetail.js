@@ -89,6 +89,9 @@ class ProfileDetail extends Component{
                                 <div className ="langauge">
                                     <p>{this.props.languages[0].name}</p>
                                 </div>
+
+                                <Link to="/sign_up"><button onClick = {this.handleToggleProfile}  className="edit-button" value={this.props.id}>Edit Profile</button></Link>
+                                <button onClick = {this.handleToggleProfile}  className="delete-button" value={this.props.id}>Delete Profile</button>
                             </div>
                         </li>
                     </div>
