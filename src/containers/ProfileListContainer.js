@@ -32,16 +32,6 @@ class ProfileListContainer extends Component{
                 </select>
                 </div>
 
-                <div className = "inline">
-                <label htmlFor="select-language">Filter by language</label><br/>
-                <select id="select-language" className = "select-list">
-                    <option> Select langauge... </option>
-                    <option value = "Ruby"> Ruby  </option>
-                    <option value = "Javascript"> Javascript </option>
-                    <option value = "Java"> Java </option>
-                    <option value = "C++"> C++ </option>
-                </select>
-                </div>
                 </div>
                 <ProfileList submit= {this.handleProfileIdContainer} profiles={this.props.profiles}/>
             </Fragment>
