@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import logo from './logo.png'
 
 
 const Navbar = () => (
@@ -10,11 +11,11 @@ const Navbar = () => (
    {/* </div> */}
    {/* <div> */}
     <ul className="navContent">
-        <li className="logo">logo</li>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/start_hire">Start hiring now</Link></li>
-        <li><Link to="/sign_up">Sign Up</Link></li>
-        <li><Link to="/find_a_job">Find a job</Link></li>
+        <li className="logo"><Link to="/"><img className='logo-image' src={logo}></img></Link></li>
+        <li className='float-right'><Link to="/">Home</Link></li>
+        <li className='float-right'><Link to="/start_hire">Start hiring now</Link></li>
+        <li className='float-right'><Link to="/sign_up">Sign Up</Link></li>
+        <li className='float-right'><Link to="/find_a_job">Find a job</Link></li>
     </ul>
     {/* </div> */}
 

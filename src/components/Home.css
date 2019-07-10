@@ -1,0 +1,52 @@
+.home{
+    width: 100%;
+    display: inline-flex;
+    position:absolute;
+    right:0;
+    height: 90vh;
+    z-index: -2
+}
+
+.main-content-left{
+    width: 50%;
+    padding: 20% 0% 0% 10%;
+}
+
+.person{
+    width:86%;
+}
+
+.main-content-left h1{
+    font-size: 60px;
+    color: black;
+}
+
+.main-content-left p{
+    font-size: 60px;
+    color: black;
+}
+
+.main-content-right{
+    width: 50%;
+    padding: 10%;
+}
+
+.button-home{
+    width: auto;
+    border-radius: 50px;
+    margin-right: 5%;
+}
+
+.button-signup{
+    width: auto;
+    color: black;
+    background-color: Transparent;
+    border: 1px solid black;
+    border-radius: 50px;
+    margin-right: 5%;
+}
+
+a:visited { text-decoration: none; color:black; }
+a:hover { text-decoration: none; color:black; }
+a:focus { text-decoration: none; color:black; }
+a:hover, a:active { text-decoration: none; color:black }

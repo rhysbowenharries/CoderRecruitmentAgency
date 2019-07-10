@@ -1,34 +1,39 @@
 import React, { Component, Fragment } from "react";
 import "./FormComponent.css"
 import { Redirect } from 'react-router-dom';
+import Checkbox from '@material-ui/core/Checkbox';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
 
 class FormComponent extends Component{
 
     constructor(props){
         super(props)
         this.state = {
-                
-                firstName: "",
-                lastName: "",
-                location: "",
-                languages: "",
-                salary: null,
-                role: "",
-                profileDescription: "",
-                jobTitle:"",
-                toProfileList: false
+
+            firstName: "",
+            lastName: "",
+            location: "",
+            languages:"",
+            salary: null,
+            role: "",
+            profileDescription: "",
+            jobTitle:"",
+            toProfileList: false
 
 
         }
-            this.handleFirstNameChange = this.handleFirstNameChange.bind(this)
-            this.handleLastNameChange = this.handleLastNameChange.bind(this)
-            this.handleLanguageChange = this.handleLanguageChange.bind(this)
-            this.handleLocationChange = this.handleLocationChange.bind(this)
-            this.handleProfileDescriptionChange = this.handleProfileDescriptionChange.bind(this)
-            this.handleJobTitleChange = this.handleJobTitleChange.bind(this)
-            this.handleSalaryChange = this.handleSalaryChange.bind(this)
-            this.handleRoleChange = this.handleRoleChange.bind(this)
-            this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleFirstNameChange = this.handleFirstNameChange.bind(this)
+        this.handleLastNameChange = this.handleLastNameChange.bind(this)
+        this.handleLanguageChange = this.handleLanguageChange.bind(this)
+        this.handleLocationChange = this.handleLocationChange.bind(this)
+        this.handleProfileDescriptionChange = this.handleProfileDescriptionChange.bind(this)
+        this.handleJobTitleChange = this.handleJobTitleChange.bind(this)
+        this.handleSalaryChange = this.handleSalaryChange.bind(this)
+        this.handleRoleChange = this.handleRoleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleFirstNameChange(event){
@@ -64,19 +69,19 @@ class FormComponent extends Component{
     }
 
     handleSubmit(event){
-       event.preventDefault()
-       this.props.addProfile({
-           firstName: this.state.firstName,
-           lastName: this.state.lastName,
-           languages: this.state.languages,
-           profileDescription: this.state.profileDescription,
-           location: this.state.location,
-           salary: this.state.salary,
-           jobTitle: this.state.jobTitle,
-           role: this.state.role
-       });
-       this.setState({ toProfileList: true });
-   }
+        event.preventDefault()
+        this.props.addProfile({
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            languages: this.state.languages,
+            profileDescription: this.state.profileDescription,
+            location: this.state.location,
+            salary: this.state.salary,
+            jobTitle: this.state.jobTitle,
+            role: this.state.role
+        });
+        this.setState({ toProfileList: true });
+    }
 
 
 
@@ -142,4 +147,4 @@ class FormComponent extends Component{
     }
 }
 
-export default FormComponent
+    export default FormComponent

@@ -5,90 +5,91 @@ import FormComponent from '../components/FormComponent'
 import Navbar from '../components/Navbar'
 import Home from '../components/Home'
 import ProfileIndividual from "./ProfileIndividual"
-import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom'
+
 
 class Main extends Component {
 
-  constructor (props) {
-    super(props);
-    this.state = {
-      profiles: [],
-      profileid:null
+    constructor (props) {
+        super(props);
+        this.state = {
+            profiles: [],
+            profileid:null
+        }
+        this.handleProfile = this.handleProfile.bind(this)
+        this.addProfile = this.addProfile.bind(this)
     }
-    this.handleProfile = this.handleProfile.bind(this)
-    this.addProfile = this.addProfile.bind(this)
-  }
 
 
 
-  handleProfile(eventID){
-    this.setState({profileid:eventID})
-    // return (
-    //     <Link to=`/start_hire/${this.state.profileid}` component=<ProfileIndividual profile{this.state.profileid}/>
-    // )
-  }
+    handleProfile(eventID){
+        this.setState({profileid:eventID})
+        // return (
+        //     <Link to=`/start_hire/${this.state.profileid}` component=<ProfileIndividual profile{this.state.profileid}/>
+        // )
+    }
 
-  componentDidMount() {
-    const url = 'http://localhost:8080/programmers';
+    componentDidMount() {
+        const url = 'http://localhost:8080/programmers';
 
-    fetch(url)
-    .then(res => res.json())
-    .then(profiles => this.setState({profiles: profiles._embedded.programmers}))
-    .catch(err=>console.error);
-  }
+        fetch(url)
+        .then(res => res.json())
+        .then(profiles => this.setState({profiles: profiles._embedded.programmers}))
+        .catch(err=>console.error);
+    }
 
-  addProfile(profile) {
-    // works without id for now, might need later
-    // profile.id = this.state.profiles.length + 1;
-    this.setState(prevState => {
-      return {profiles: [...prevState.profiles, profile]}
-    })
-    const url = 'http://localhost:8080/programmers'
-    fetch(url, {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        firstName: profile.firstName,
-        lastName: profile.lastName,
-        languages: profile.languages,
-        role: profile.role,
-        location: profile.location,
-        salary: profile.salary,
-        jobTitle: profile.jobTitle,
-        profileDescription: profile.profileDescription
-      })
-    })
-  }
+    addProfile(profile) {
+        // works without id for now, might need later
+        // profile.id = this.state.profiles.length + 1;
+        this.setState(prevState => {
+            return {profiles: [...prevState.profiles, profile]}
+        })
+        const url = 'http://localhost:8080/programmers'
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                firstName: profile.firstName,
+                lastName: profile.lastName,
+                languages: profile.languages,
+                role: profile.role,
+                location: profile.location,
+                salary: profile.salary,
+                jobTitle: profile.jobTitle,
+                profileDescription: profile.profileDescription
+            })
+        })
+    }
 
 
-  render(){
-    return (
-      <Fragment>
+    render(){
+        return (
+            <Fragment>
 
-      <Router>
-      <Fragment>
-      <Navbar/>
-      <Switch>
-      <Route exact path="/" component={Home}/>
-      <Route path = "/sign_up" render={() => {
-        return <FormComponent addProfile={this.addProfile}/>
-      }}/>
-      <Route exact path = "/start_hire"  render={() => {
-        return <ProfileListContainer submit={this.handleProfile} profiles={this.state.profiles}/>
-      }}/>
-      <Route path = '/start_hire/{this.state.profileid}' render={() => {
-        return <ProfileIndividual profile={this.state.profileid}/>
-      }}/>
-      </Switch>
-      </Fragment>
-      </Router>
+                <Router>
+                    <Fragment>
+                        <Navbar/>
+                        <Switch>
+                            <Route exact path="/" component={Home}/>
+                            <Route path = "/sign_up" render={() => {
+                                return <FormComponent addProfile={this.addProfile}/>
+                            }}/>
+                            <Route exact path = "/start_hire"  render={() => {
+                                return <ProfileListContainer submit={this.handleProfile} profiles={this.state.profiles}/>
+                            }}/>
+                            <Route path = '/start_hire/{this.state.profileid}' render={() => {
+                                return <ProfileIndividual profile={this.state.profileid}/>
+                            }}/>
+                        </Switch>
+                    </Fragment>
+                </Router>
 
-      </Fragment>
-    )
-  }
+            </Fragment>
+        )
+    }
 }
 
 export default Main;
