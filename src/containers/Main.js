@@ -18,7 +18,7 @@ class Main extends Component {
         }
         this.handleProfile = this.handleProfile.bind(this)
         this.addProfile = this.addProfile.bind(this)
-        
+
     }
 
     handleProfile(currentProfile){

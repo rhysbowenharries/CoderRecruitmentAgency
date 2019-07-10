@@ -14,16 +14,18 @@ class FormComponent extends Component{
 
 
         if (props.profileData){
+            const profileData = JSON.parse(props.profileData)
+            const salary  = parseFloat(profileData.salary)
             this.state = {
-                id:props.profileData.id,
-                firstName: props.profileData.firstName,
-                lastName: props.profileData.lastName,
-                location: props.profileData.location,
-                languages:props.profileData.languages,
-                salary: props.profileData.salary,
-                role: props.profileData.role,
-                profileDescription: props.profileData.profileDescription,
-                jobTitle:props.profileData.jobTitle,
+                id:profileData.id,
+                firstName: profileData.first_name,
+                lastName: profileData.last_name,
+                location: profileData.location,
+                languages:profileData.languages,
+                salary:salary,
+                role: profileData.role,
+                profileDescription: profileData.profileDescription,
+                jobTitle:profileData.jobTitle,
                 toProfileList: false
             }
         }else{
@@ -117,11 +119,11 @@ class FormComponent extends Component{
                                     </input>
                                     <br/>
                                     <label htmlFor="last_name">What is your last name?</label><br/><br/>
-                                    <input  id="last_name" type="text" placeholder="Last name" onChange= {this.handleLastNameChange}>
+                                    <input  id="last_name" type="text"  value={this.state.lastName} placeholder="Last name" onChange= {this.handleLastNameChange}>
                                     </input>
                                     <br/>
                                     <label htmlFor="location">Where would you like to work?</label><br/><br/>
-                                    <input  id="location" type="text" placeholder="Location" onChange= {this.handleLocationChange}>
+                                    <input  id="location" type="text" placeholder="Location" value={this.state.location}  onChange= {this.handleLocationChange}>
                                     </input>
                                     <br/>
                                     <label htmlFor="role">What role would you like(Permanant/Contract)?</label><br/><br/>
@@ -132,12 +134,12 @@ class FormComponent extends Component{
                                     </select>
                                     <br/>
                                     <label htmlFor="salary">Ideal salary</label><br/><br/>
-                                    <input  id="salary" type="number" placeholder="Salary" onChange= {this.handleSalaryChange}>
+                                    <input  id="salary" type="number" placeholder="Salary" value={this.state.salary}  onChange= {this.handleSalaryChange}>
                                     </input>
                                     <br/>
 
                                     <label htmlFor="profession">What is your job title?</label><br/><br/>
-                                    <select  onChange= {this.handleJobTitleChange} id="last_name" placeholder="Last name" className="select">
+                                    <select  onChange= {this.handleJobTitleChange} id="profession" placeholder="Last name"  value={this.state.jobTitle} className="select">
                                         <option value = "Software Engineer"> Software Engineer </option>
                                         <option value = "Engineer Management"> Engineer Management </option>
                                         <option value = "UX"> UX Designer </option>
@@ -147,11 +149,11 @@ class FormComponent extends Component{
                                     </select>
                                     <br/>
                                     <label htmlFor="language">What languages do you know?</label><br/><br/>
-                                    <input  id="language" type="text" placeholder="Languages" onChange= {this.handleLanguageChange}>
+                                    <input  id="language" type="text" placeholder="Languages" value={this.state.languages}  onChange= {this.handleLanguageChange}>
                                     </input>
                                     <br/>
                                     <label htmlFor="profile">Tell us a little about yourself.</label><br/><br/>
-                                    <textarea id="profile" placeholder="Profile Description" onChange= {this.handleProfileDescriptionChange}>
+                                    <textarea id="profile" placeholder="Profile Description" value={this.state.profileDescription}  onChange= {this.handleProfileDescriptionChange}>
                                     </textarea>
                                     <br/>
                                     <button type="submit">{this.props.mode === "UPDATE" ? "Update" : "Save" } Profile</button>
