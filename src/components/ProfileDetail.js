@@ -47,19 +47,19 @@ class ProfileDetail extends Component{
 
     
 
-    languageMapper = (props) => {
-     const mappedLanguages = props.languages.map(language => {return <li>{language.name}</li>})  
-     console.log("language mapper",mappedLanguages);
+    // languageMapper = (props) => {
+    //  const mappedLanguages = props.languages.map(language => {return <li>{language.name}</li>})  
+    //  console.log("language mapper",mappedLanguages);
       
-    return mappedLanguages
+    // return mappedLanguages
 
-    }
+    // }
 
     render(){
 
         return (
             <Fragment>
-                {/* {console.log("render log",this.props)} */}
+                {console.log("render log",this.props)}
 
                 <div className ="list-profile">
 
@@ -77,9 +77,7 @@ class ProfileDetail extends Component{
                             </div>
 
 
-                            <ul className ="langauge">
-                                {this.languageMapper(this.props)}
-                            </ul>
+                          
 
                             <div ref={this.extraProfileInfoContainer} className = "hidden">
 
@@ -95,7 +93,9 @@ class ProfileDetail extends Component{
                                     <h3>Speciality:<br/><br/> {this.props.jobTitle}</h3><br/>
                                 </div>
                                 <h4> {this.props.profileDescription}</h4>
-                              <h4></h4> 
+                              <h4> <div className ="langauge">
+                                        <p>{this.props.languages[0].name}</p>
+                                    </div></h4> 
                             </div>
                         </li>
                     </div>
