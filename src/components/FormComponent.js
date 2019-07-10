@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from "react";
 import "./FormComponent.css"
 import { Redirect } from 'react-router-dom';
-import Checkbox from '@material-ui/core/Checkbox';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
@@ -12,6 +11,7 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import Checkbox from './checkBoxes'
 
 import Select from '@material-ui/core/Select';
 
@@ -48,10 +48,13 @@ class FormComponent extends Component{
                 profileDescription: "",
                 jobTitle:"",
                 toProfileList: false,
-                personName:[],
-                setPersonName:[]
+                // personName:[],
+                // setPersonName: []
 
             }}
+
+
+
 
 
             this.handleFirstNameChange = this.handleFirstNameChange.bind(this)
@@ -63,28 +66,24 @@ class FormComponent extends Component{
             this.handleSalaryChange = this.handleSalaryChange.bind(this)
             this.handleRoleChange = this.handleRoleChange.bind(this)
             this.handleSubmit = this.handleSubmit.bind(this)
-            this.handleChange = this.handleChange.bind(this)
-            this.names = [
-                'Oliver Hansen',
-                'Van Henry',
-                'April Tucker',
-                'Ralph Hubbard',
-                'Omar Alexander',
-                'Carlos Abbott',
-                'Miriam Wagner',
-                'Bradley Wilkerson',
-                'Virginia Andrews',
-                'Kelly Snyder',
-            ];
+            // this.handleChange = this.handleChange.bind(this)
 
-            this.MenuProps = {
-                PaperProps: {
-                    style: {
-                        // maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-                        width: 250,
-                    },
-                },
-            };
+
+            // this.names = [
+            //     {url: 'www.bbc.com',
+            //     name: 'bbc'},
+            //     {url: 'www.cnn.com',
+            //     name: 'cnn'},
+            // ];
+            //
+            // this.MenuProps = {
+            //     PaperProps: {
+            //         style: {
+            //             // maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+            //             width: 250,
+            //         },
+            //     },
+            // };
 
 
         }
@@ -137,20 +136,23 @@ class FormComponent extends Component{
         }
 
 
-        handleChange(event) {
-            this.setState({setPersonName:[event.target.value]})
-        };
-
-        handleChangeMultiple(event) {
-            const { options } = event.target;
-            const value = [];
-            for (let i = 0, l = options.length; i < l; i += 1) {
-                if (options[i].selected) {
-                    value.push(options[i].value);
-                }
-            }
-            this.setState({setPersonName: [value]});
-        }
+        // handleChange(event) {
+        //     this.setState(prevState => {
+        //         return {setPersonName: [...prevState.setPersonName, event.target.value]}
+        //     })
+        // };
+        //
+        // handleChangeMultiple(event) {
+        //     const { options } = event.target;
+        //     const value = {};
+        //
+        //     for (let i = 0, l = options.length; i < l; i += 1) {
+        //         if (options[i].selected) {
+        //             value['name'] = options[i].value;
+        //         }
+        //     }
+        //     this.setState({setPersonName: value});
+        // }
 
 
 
@@ -175,75 +177,74 @@ class FormComponent extends Component{
                                     </input>
 
 
+                                    <Checkbox/>
 
-
-                                        <InputLabel htmlFor="select-multiple-checkbox">Tag</InputLabel>
-                                        <Select
-                                            multiple
-                                            value={this.state.personName}
-                                            onChange={this.handleChange}
-                                            input={<Input id="select-multiple-checkbox" />}
-                                            renderValue={selected => selected.join(', ')}
-
-                                            >
-                                                {this.names.map(name => (
-                                                    <MenuItem key={name} value={name}>
-                                                        <Checkbox checked={this.state.personName.indexOf(name) > -1} />
-                                                        <ListItemText primary={name} />
-                                                    </MenuItem>
-                                                ))}
-                                            </Select>
-
-
+                                    {/* <InputLabel htmlFor="select-multiple-checkbox">Tag</InputLabel>
+                                    <Select
+                                    multiple
+                                    value={this.state.personName}
+                                    onChange={this.handleChange}
+                                    input={<Input id="select-multiple-checkbox" />}
+                                    renderValue={selected => selected.join(', ')}
+                                    >
+                                    {this.names.map(name => (
+                                    <MenuItem key={name} value={name.url}>
+                                    <Checkbox checked={this.state.personName.indexOf(name) > -1} />
+                                    <ListItemText primary={name.name} />
+                                </MenuItem>
+                            ))}
+                        </Select> */}
 
 
 
-                                                <br/>
-                                                <label htmlFor="last_name">What is your last name?</label><br/><br/>
-                                                <input  id="last_name" type="text"  value={this.state.lastName} placeholder="Last name" onChange= {this.handleLastNameChange}>
-                                                </input>
-                                                <br/>
-                                                <label htmlFor="location">Where would you like to work?</label><br/><br/>
-                                                <input  id="location" type="text" placeholder="Location" value={this.state.location}  onChange= {this.handleLocationChange}>
-                                                </input>
-                                                <br/>
-                                                <label htmlFor="role">What role would you like(Permanant/Contract)?</label><br/><br/>
-                                                <select  onChange= {this.handleRoleChange} id="role" placeholder="" className="select" required value={this.state.role}>
-                                                    <option disabled value = ""> Select Role Type </option>
-                                                    <option value = "Permanant"> Permanant </option>
-                                                    <option value = "Contract"> Contract </option>
-                                                </select>
-                                                <br/>
-                                                <label htmlFor="salary">Ideal salary</label><br/><br/>
-                                                <input  id="salary" type="number" placeholder="Salary" value={this.state.salary}  onChange= {this.handleSalaryChange}>
-                                                </input>
-                                                <br/>
 
-                                                <label htmlFor="profession">What is your job title?</label><br/><br/>
-                                                <select  onChange= {this.handleJobTitleChange} id="profession" placeholder="Last name"  value={this.state.jobTitle} className="select">
-                                                    <option value = "Software Engineer"> Software Engineer </option>
-                                                    <option value = "Engineer Management"> Engineer Management </option>
-                                                    <option value = "UX"> UX Designer </option>
-                                                    <option value = "Product Manager"> Product Manager </option>
-                                                    <option value = "Front-end Developer"> Front-end Developer </option>
-                                                    <option value = "Mobile App Engineer"> Mobile App Engineer </option>
-                                                </select>
-                                                <br/>
-                                                <label htmlFor="language">What languages do you know?</label><br/><br/>
-                                                <input  id="language" type="text" placeholder="Languages" value={this.state.languages}  onChange= {this.handleLanguageChange}>
-                                                </input>
-                                                <br/>
-                                                <label htmlFor="profile">Tell us a little about yourself.</label><br/><br/>
-                                                <textarea id="profile" placeholder="Profile Description" value={this.state.profileDescription}  onChange= {this.handleProfileDescriptionChange}>
-                                                </textarea>
-                                                <br/>
-                                                <button type="submit">{this.props.mode === "UPDATE" ? "Update" : "Save" } Profile</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </Fragment>
-                            )}
-                        }
-                    }
 
-                    export default FormComponent
+                        <br/>
+                        <label htmlFor="last_name">What is your last name?</label><br/><br/>
+                        <input  id="last_name" type="text"  value={this.state.lastName} placeholder="Last name" onChange= {this.handleLastNameChange}>
+                        </input>
+                        <br/>
+                        <label htmlFor="location">Where would you like to work?</label><br/><br/>
+                        <input  id="location" type="text" placeholder="Location" value={this.state.location}  onChange= {this.handleLocationChange}>
+                        </input>
+                        <br/>
+                        <label htmlFor="role">What role would you like(Permanant/Contract)?</label><br/><br/>
+                        <select  onChange= {this.handleRoleChange} id="role" placeholder="" className="select" required value={this.state.role}>
+                            <option disabled value = ""> Select Role Type </option>
+                            <option value = "Permanant"> Permanant </option>
+                            <option value = "Contract"> Contract </option>
+                        </select>
+                        <br/>
+                        <label htmlFor="salary">Ideal salary</label><br/><br/>
+                        <input  id="salary" type="number" placeholder="Salary" value={this.state.salary}  onChange= {this.handleSalaryChange}>
+                        </input>
+                        <br/>
+
+                        <label htmlFor="profession">What is your job title?</label><br/><br/>
+                        <select  onChange= {this.handleJobTitleChange} id="profession" placeholder="Last name"  value={this.state.jobTitle} className="select">
+                            <option value = "Software Engineer"> Software Engineer </option>
+                            <option value = "Engineer Management"> Engineer Management </option>
+                            <option value = "UX"> UX Designer </option>
+                            <option value = "Product Manager"> Product Manager </option>
+                            <option value = "Front-end Developer"> Front-end Developer </option>
+                            <option value = "Mobile App Engineer"> Mobile App Engineer </option>
+                        </select>
+                        <br/>
+                        <label htmlFor="language">What languages do you know?</label><br/><br/>
+                        <input  id="language" type="text" placeholder="Languages" value={this.state.languages}  onChange= {this.handleLanguageChange}>
+                        </input>
+                        <br/>
+                        <label htmlFor="profile">Tell us a little about yourself.</label><br/><br/>
+                        <textarea id="profile" placeholder="Profile Description" value={this.state.profileDescription}  onChange= {this.handleProfileDescriptionChange}>
+                        </textarea>
+                        <br/>
+                        <button type="submit">{this.props.mode === "UPDATE" ? "Update" : "Save" } Profile</button>
+                    </form>
+                </div>
+            </div>
+        </Fragment>
+    )}
+}
+}
+
+export default FormComponent
