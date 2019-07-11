@@ -31,9 +31,9 @@ const Checkbox = (props) => {
     );
   }
 
-  function makePsForEachSelectedLangauge() {
-    return getSelectedLanguages().map(language => <p>{language}</p>);
-  }
+  // function makePsForEachSelectedLangauge() {
+  //   return getSelectedLanguages().map(language => <p>{language}</p>);
+  // }
 
   const languageCheckBoxes = languages.map((language, index) => {
     return (
@@ -54,7 +54,7 @@ const Checkbox = (props) => {
   return (
     <Fragment>
       {languageCheckBoxes}
-      {makePsForEachSelectedLangauge()}
+    
     </Fragment>
   );
 }

@@ -53,9 +53,10 @@ class ProfileDetail extends Component{
     }
 
     languageMapper() {
+      if (this.props.languages){
      const mappedLanguages = this.props.languages.map(language => {return <li>{language.name}</li>})
 
-    return mappedLanguages
+    return mappedLanguages}
 
     }
 
