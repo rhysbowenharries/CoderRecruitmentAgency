@@ -43,7 +43,7 @@ class FormComponent extends Component{
                 firstName: "",
                 lastName: "",
                 location: "",
-                languages:"",
+                languages: [],
                 salary: null,
                 role: "",
                 profileDescription: "",
@@ -102,8 +102,8 @@ class FormComponent extends Component{
             this.setState({location: event.target.value})
         }
 
-        handleLanguageChange(event){
-            this.setState({languages: event.target.value})
+        handleLanguageChange(languageArray){
+            this.setState({languages: languageArray})
         }
 
         handleProfileDescriptionChange(event){
@@ -133,7 +133,7 @@ class FormComponent extends Component{
                 salary: this.state.salary,
                 jobTitle: this.state.jobTitle,
                 role: this.state.role
-            });
+            })
             this.setState({ toProfileList: true });
         }
 
@@ -223,7 +223,7 @@ class FormComponent extends Component{
 
                         <label htmlFor="profession">What is your job title?</label><br/><br/>
                         <select  onChange= {this.handleJobTitleChange} id="profession" required  value={this.state.jobTitle} className="select">
-                            <option disabled value = "nah"> Select Job Title </option>
+                            <option selected disabled value = "nah"> Select Job Title </option>
                             <option value = "Software Engineer"> Software Engineer </option>
                             <option value = "Engineer Management"> Engineer Management </option>
                             <option value = "UX"> UX Designer </option>
@@ -233,7 +233,7 @@ class FormComponent extends Component{
                         </select>
                         <br/>
                         <label htmlFor="language">What languages do you know?</label><br/><br/>
-                        <Checkbox/>
+                        <Checkbox handleLanguageChange={this.handleLanguageChange}/>
 
                         <br/>
                         <label htmlFor="profile">Tell us a little about yourself.</label><br/><br/>

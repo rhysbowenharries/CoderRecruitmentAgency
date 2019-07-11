@@ -52,12 +52,8 @@ class ProfileDetail extends Component{
         }
     }
 
-
-
-
-    languageMapper = (props) => {
-     const mappedLanguages = props.languages.map(language => {return <li>{language.name}</li>})
-     console.log("language mapper",mappedLanguages);
+    languageMapper() {
+     const mappedLanguages = this.props.languages.map(language => {return <li>{language.name}</li>})
 
     return mappedLanguages
 

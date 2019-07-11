@@ -5,7 +5,7 @@ import { freemem } from "os"
 
 const Checkbox = (props) => {
 
-  const availableLanguages = [
+  const languages = [
     {
       name: "Ruby",
       _self: "http://localhost:8080/languages/1"
@@ -16,25 +16,26 @@ const Checkbox = (props) => {
     }
   ];
 
-  const [languages, setSelectedLanguages] = useState({});
+  const [selectedLanguages, setSelectedLanguages] = useState({});
 
   function handleCheckboxChange(e) {
-    const nextLanguages = { ...languages };
+    const nextLanguages = { ...selectedLanguages };
     nextLanguages[e.currentTarget.name] = e.currentTarget.checked;
     setSelectedLanguages(nextLanguages);
+    props.handleLanguageChange(getSelectedLanguages().map(language => language))
   }
 
   function getSelectedLanguages() {
-    return Object.keys(languages).filter(
-      (key, _) => languages[key]
+    return Object.keys(selectedLanguages).filter(
+      (key, _) => selectedLanguages[key]
     );
   }
 
-  // function makePsForEachSelectedLangauge() {
-  //   return getSelectedLanguages().map(language => <p>{language}</p>);
-  // }
+  function makePsForEachSelectedLangauge() {
+    return getSelectedLanguages().map(language => <p>{language}</p>);
+  }
 
-  const languageCheckBoxes = availableLanguages.map((language, index) => {
+  const languageCheckBoxes = languages.map((language, index) => {
     return (
       <Fragment>
         <input
@@ -45,7 +46,7 @@ const Checkbox = (props) => {
           name={language._self}
           value={language._self}
         />
-        <label htmlFor={language._self}>{language.name}</label>
+        <label for={language._self}>{language.name}</label>
       </Fragment>
     );
   });
@@ -53,6 +54,7 @@ const Checkbox = (props) => {
   return (
     <Fragment>
       {languageCheckBoxes}
+      {makePsForEachSelectedLangauge()}
     </Fragment>
   );
 }
